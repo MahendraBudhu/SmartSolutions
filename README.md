@@ -11,9 +11,9 @@
 Ping Pong Ball Machine App (More information will be added soon).
 
 ## Team Members:
-* Mahendra Budhu ([Github Profile](https://github.com/MahendraBudhu))  
-* Ijlal Siddiqui ([Github Profile](https://github.com/Ijlal40))  
-* Abshir Mohamud (Still waiting on his Github account)  
+* Mahendra Budhu ([GitHub Profile](https://github.com/MahendraBudhu))  
+* Ijlal Siddiqui ([GitHub Profile](https://github.com/Ijlal40))  
+* Abshir Mohamud ([GitHub Profile](https://github.com/Abshir-Mohamud))  
 
 ## Gantt Chart
 (Information will be added soon)
