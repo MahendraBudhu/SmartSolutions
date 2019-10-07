@@ -5,7 +5,7 @@
 2. [Team Members](#team-members)
 3. [Gantt Chart](#gantt-chart)
 4. [Design (Hardware)](#design-hardware)
-5.[Part List (Hardware)](#partlist-hardware)
+5. [Part List (Hardware)](#parts-hardware)
 6. [Design (Software)](#design-software)
 
 ## Overview
@@ -22,7 +22,7 @@ Ping Pong Ball Machine App (More information will be added soon).
 ## Design (Hardware)
 (Information will be added soon)
 
-## Part List (Hardware)
+## Parts (Hardware)
 (Information will be added soon)
 
 ## Design (Software)
