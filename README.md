@@ -21,5 +21,8 @@ Ping Pong Ball Machine App (More information will be added soon).
 ## Design (Hardware)
 (Information will be added soon)
 
+## Part List (Hardware)
+(Information will be added soon)
+
 ## Design (Software)
 (Information will be added soon) 
