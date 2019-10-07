@@ -20,7 +20,8 @@ Ping Pong Ball Machine App (More information will be added soon).
 (Information will be added soon)
 
 ## Design (Hardware)
-![Image of the Ping Pong Machine](Images/Ping Pong Machine Diagram.png)
+Image of the Ping Pong Machine
+![Image of the Ping Pong Machine](https://github.com/MahendraBudhu/SmartSolutions/blob/master/Images/Ping%20Pong%20Machine%20Diagram.PNG)
 
 ## Parts (Hardware)
 (Information will be added soon)
