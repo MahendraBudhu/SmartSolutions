@@ -1,3 +1,56 @@
 <resources>
     <string name="app_name">Smart Table Tennis</string>
+    <string name="prompt_email">E-mail:</string>
+    <string name="prompt_password">Password:</string>
+    <string name="action_log_in">Log In</string>
+    <string name="action_register">Register</string>
+    <string name="noUserToast">Please enter a username!</string>
+    <string name="noPassToast">Please enter a password!</string>
+    <string name="noBothToast">Please enter a username and password!</string>
+    <string name="wipToast">Feature yet to be implemented, sorry for the inconvenience!</string>
+
+    <string name="statsBtn">Statistics</string>
+    <string name="setupBtn">Ball Configuration</string>
+    <string name="randomBtn">Random Practice</string>
+
+    <string name="setupText">Ball Configuration</string>
+    <string name="speedTitle">Speed (km/h) =</string>
+    <string name="angleHorizontalTitle">Angle (Horizontal) =</string>
+    <string name="angleVerticalTitle">Angle (Vertical) =</string>
+    <string name="ballCountTitle">Balls shot:</string>
+    <string name="defaultNum">0</string>
+    <string name="startButton">Start!</string>
+    <string name="stopButton">Stop!</string>
+    <string name="speedNumberDefault">0</string>
+    <string name="angleNumberDefault">0</string>
+    <string name="startButtonToast">Starting Practice!</string>
+    <string name="stopButtonToast">Stopping Practice!</string>
+
+    <string name="statsTitle">Statistics</string>
+    <string name="averageSpeed">Average Speed =</string>
+    <string name="minSpeed">Minimum Speed =</string>
+    <string name="maxSpeed">Maximum Speed =</string>
+    <string name="accuracy">Accuracy =</string>
+    <string name="shotTotal">Total Balls Shot =</string>
+    <string name="shotsHit">Total Shots Hit =</string>
+    <string name="shotsMissed">Total Shots Missed =</string>
+    <string name="defaultAccuracy">0%</string>
+
+    <string name="daily">Daily</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="alltime">All-time</string>
+    <string name="toastDaily">Daily</string>
+    <string name="toastMonthly">Monthly</string>
+    <string name="toastYearly">Yearly</string>
+    <string name="toastAlltime">All-time</string>
+    <string name="selectTime">Select a time: </string>
+
+
+    <string name="randomText">Random Practice</string>
+    <string name="randomDesc">Random Practice is a practice where each shot will have a randomized speed and angle so be prepared!</string>
+    <string name="randBtnStop">Stop</string>
+    <string name="randBtnStart">Start</string>
+    <string name="randStartButtonToast">Starting Random Practice!</string>
+    <string name="randStopButtonToast">Stopping Random Practice!</string>
 </resources>
