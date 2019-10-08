@@ -20,27 +20,27 @@ Unlike traditional ping pong ball machines which only contains the functionality
 (Information will be added soon)
 
 ## Design (Hardware)
-This is just a general idea of what our machine may look like. Essentailly just an outline of things. A detailed CAD will be made soon.
+This is just a general idea of what our machine may look like. Essentailly just an outline of things void of any functionality. A detailed CAD will be made soon.
 ![Image of the Ping Pong Machine](https://github.com/MahendraBudhu/SmartSolutions/blob/master/Images/Ping%20Pong%20Machine%20Diagram.PNG)
 
 ## Parts (Hardware)
-This is just a summery of parts. Part details, prices and links will be added soon.
+This is just a summary of parts. Part details, prices and links will be added soon.
 
  Electrical Parts:
   * 10-12 dc motors
 	  * 2 High Power 
   	* 8-10 Low Power 
-  * Cables ( Arduino, 12 gauge and usb cable )
-  * Arduino
+  * Cables ( Arduino power, 12 gauge and usb cable )
+  * Arduino Uno
   * Battery Pack(s)
-  * Breadboard
+  * Breadboard(s)
   * Voltage Regulator
   * Motor Modules
 
  3D Parts
   * Base
   * Container
-  * Tube x2
+  * Funnel x2
 
  Gears:
   * Gear Strip 
