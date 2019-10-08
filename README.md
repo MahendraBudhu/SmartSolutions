@@ -9,7 +9,7 @@
 6. [Design (Software)](#design-software)
 
 ## Overview
-Ping Pong Ball Machine App (More information will be added soon).
+Unlike traditional ping pong ball machines which only contains the functionality to change shooting speed, direction while shooting and spin of the shot. The ping pong machine app developed by Smart Solutions contains the functionality to allows users to track their progress as to be able to physically see their rate of improvement. This also has the added benefit of displaying to the user shots that they need to improve on and create regiments to help users improve more steadily.
 
 ## Team Members:
 * Mahendra Budhu ([GitHub Profile](https://github.com/MahendraBudhu))  
