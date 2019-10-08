@@ -17,7 +17,7 @@ Unlike traditional ping pong ball machines which only contains the functionality
 * Abshir Mohamud ([GitHub Profile](https://github.com/Abshir-Mohamud))  
 
 ## Gantt Chart
-(Information will be added soon)
+![Image of the Ping Pong Machine](https://github.com/MahendraBudhu/SmartSolutions/blob/master/Images/Capture.PNG)
 
 ## Design (Hardware)
 This is just a general idea of what our machine may look like. Essentailly just an outline of things void of any functionality. A detailed CAD will be made soon.
