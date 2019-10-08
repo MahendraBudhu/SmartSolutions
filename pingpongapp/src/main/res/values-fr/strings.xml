@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Tennis de table intelligent</string>
+    <string name="prompt_email">E-mail:</string>
+    <string name="prompt_password">Mot de passe:</string>
+    <string name="action_log_in">S'identifier</string>
+    <string name="action_register"> S'inscrire</string>
+    <string name="noUserToast"> Merci d'entrer un nom d'utilisateur! </string>
+    <string name="noPassToast"> Veuillez entrer un mot de passe! </string>
+    <string name="noBothToast">S'il vous plaît entrer un nom d'utilisateur et mot de passe!</string>
+    <string name="wipToast">Fonctionnalité encore à mettre en œuvre, désolé pour le désagrément!</string>
+
+    <string name="statsBtn">Statistiques</string>
+    <string name="setupBtn">Configuration de la balle</string>
+    <string name="randomBtn">Pratique aléatoire</string>
+
+    <string name="setupText">Configuration de la balle</string>
+    <string name="speedTitle">Vitesse (km / h) =</string>
+    <string name="angleHorizontalTitle">Angle (horizontal) =</string>
+    <string name="angleVerticalTitle">Angle (Vertical) =</string>
+    <string name="ballCountTitle">Balles tir:</string>
+    <string name="defaultNum">0</string>
+    <string name="startButton">Début!</string>
+    <string name="stopButton">Arrêtez!</string>
+    <string name="speedNumberDefault">0</string>
+    <string name="angleNumberDefault">0</string>
+    <string name="startButtonToast">Pratique de départ!</string>
+    <string name="stopButtonToast">Arrêter la pratique!</string>
+
+    <string name="statsTitle">Statistiques</string>
+    <string name="averageSpeed">Vitesse moyenne =</string>
+    <string name="minSpeed">Vitesse minimale =</string>
+    <string name="maxSpeed">Vitesse maximale =</string>
+    <string name="accuracy">Précision =</string>
+    <string name="shotTotal">Nombre total de balles tirées =</string>
+    <string name="shotsHit">Total de coups touchés =</string>
+    <string name="shotsMissed">Total de coups manqués =</string>
+    <string name="defaultAccuracy">0%</string>
+
+    <string name="daily">du quotidien</string>
+    <string name="monthly">rapport mensuel</string>
+    <string name="yearly">annuel</string>
+    <string name="alltime">Tout le temps</string>
+    <string name="toastDaily">du quotidien</string>
+    <string name="toastMonthly">rapport mensuel</string>
+    <string name="toastYearly">annuel</string>
+    <string name="toastAlltime">Tout le temps</string>
+    <string name="selectTime"> Sélectionnez une heure:</string>
+
+
+    <string name="randomText">Pratique aléatoire</string>
+    <string name="randomDesc">La pratique aléatoire est une pratique dans laquelle chaque tir aura une vitesse et un angle aléatoires, alors soyez prêt!</string>
+    <string name="randBtnStop">Arrêtez</string>
+    <string name="randBtnStart">Début</string>
+    <string name="randStartButtonToast">Commencer la pratique aléatoire!</string>
+    <string name="randStopButtonToast">Arrêter la pratique aléatoire!</string>
+</resources>
