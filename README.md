@@ -50,7 +50,7 @@ This is just a summery of parts. Part details, prices and links will be added so
  Sensors
   * Speed Sensor
   * Proximity Sensor
-  * Pressure sensor
+  * Pressure Sensor
 
 ## Design (Software)
 (Information will be added soon) 
