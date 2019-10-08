@@ -2,11 +2,11 @@
     <string name="app_name">Tennis de table intelligent</string>
     <string name="prompt_email">E-mail:</string>
     <string name="prompt_password">Mot de passe:</string>
-    <string name="action_log_in">S'identifier</string>
-    <string name="action_register"> S'inscrire</string>
-    <string name="noUserToast"> Merci d'entrer un nom d'utilisateur! </string>
+    <string name="action_log_in">S\'identifier</string>
+    <string name="action_register"> S\'inscrire</string>
+    <string name="noUserToast"> Merci d\'entrer un nom d\'utilisateur! </string>
     <string name="noPassToast"> Veuillez entrer un mot de passe! </string>
-    <string name="noBothToast">S'il vous plaît entrer un nom d'utilisateur et mot de passe!</string>
+    <string name="noBothToast">S\'il vous plaît entrer un nom d\'utilisateur et mot de passe!</string>
     <string name="wipToast">Fonctionnalité encore à mettre en œuvre, désolé pour le désagrément!</string>
 
     <string name="statsBtn">Statistiques</string>
