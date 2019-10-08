@@ -54,4 +54,5 @@ This is just a summery of parts. Part details, prices and links will be added so
   * Ultrasonic Sensor
 
 ## Design (Software)
-(Information will be added soon) 
+Image of the Flowchart
+![Image of the Flow Chart](https://github.com/MahendraBudhu/SmartSolutions/blob/master/Images/Flowchart.PNG)
