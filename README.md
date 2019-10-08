@@ -51,6 +51,7 @@ This is just a summery of parts. Part details, prices and links will be added so
   * Speed Sensor
   * Proximity Sensor
   * Pressure Sensor
+  * Ultrasonic Sensor
 
 ## Design (Software)
 (Information will be added soon) 
