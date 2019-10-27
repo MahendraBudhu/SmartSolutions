@@ -6,52 +6,51 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
+8-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
+9-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:5-22:19
+11-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:5-22:19
 12        android:allowBackup="true"
-12-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:6:9-35
+12-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
+13-->[androidx.core:core:1.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:7:9-43
+15-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:7:9-43
 16        android:label="@string/app_name"
-16-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:8:9-41
+16-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:8:9-41
 17        android:supportsRtl="true"
-17-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:9:9-35
-18        android:testOnly="true"
-19        android:theme="@style/AppTheme" >
-19-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-40
-20        <activity android:name="com.example.pingpongapp.RandomScreen" />
-20-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-59
-20-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-47
-21        <activity android:name="com.example.pingpongapp.StatisticsScreen" />
-21-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-54
-21-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:19-51
-22        <activity android:name="com.example.pingpongapp.SetupScreen" />
-22-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:9-49
-22-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:19-46
-23        <activity android:name="com.example.pingpongapp.MainScreen" />
-23-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:9-48
-23-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:19-45
-24        <activity android:name="com.example.pingpongapp.LoginScreen" >
-24-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:9-21:20
-24-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:19-46
-25            <intent-filter>
-25-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:13-20:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:17-69
-26-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:19:17-77
-28-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:19:27-74
-29            </intent-filter>
-30        </activity>
-31    </application>
-32
-33</manifest>
+17-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:9:9-35
+18        android:theme="@style/AppTheme" >
+18-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-40
+19        <activity android:name="com.example.pingpongapp.RandomScreen" />
+19-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-59
+19-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-47
+20        <activity android:name="com.example.pingpongapp.StatisticsScreen" />
+20-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-54
+20-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:19-51
+21        <activity android:name="com.example.pingpongapp.SetupScreen" />
+21-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:9-49
+21-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:19-46
+22        <activity android:name="com.example.pingpongapp.MainScreen" />
+22-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:9-48
+22-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:19-45
+23        <activity android:name="com.example.pingpongapp.LoginScreen" >
+23-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:9-21:20
+23-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:19-46
+24            <intent-filter>
+24-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:13-20:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:17-69
+25-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:19:17-77
+27-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:19:27-74
+28            </intent-filter>
+29        </activity>
+30    </application>
+31
+32</manifest>
