@@ -5,9 +5,16 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -19,6 +26,7 @@ public class LoginScreen extends AppCompatActivity {
 
     //Validating Login Info
     public void login(View view){
+
         TextView userField = (TextView) findViewById(R.id.username);    //Getting user inputs
         TextView passField = (TextView) findViewById(R.id.password);
 
