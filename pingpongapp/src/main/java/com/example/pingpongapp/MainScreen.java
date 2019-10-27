@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainScreen extends AppCompatActivity {
 
     @Override
@@ -13,7 +16,6 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
     }
-
     public void config(View view){ //Goes to setup screen
         Intent intent = new Intent (this, SetupScreen.class);
         startActivity(intent);
@@ -24,7 +26,7 @@ public class MainScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void random(View view){ //Goes to settings screen
+    public void random(View view){ //Goes to Random screen
         Intent intent = new Intent (this, RandomScreen.class);
         startActivity(intent);
     }
