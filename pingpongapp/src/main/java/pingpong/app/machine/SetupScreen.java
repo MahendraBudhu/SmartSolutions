@@ -25,7 +25,8 @@ public class SetupScreen extends AppCompatActivity {
     public TextView angleVerticalVal;
 
     SeekBar.OnSeekBarChangeListener sbListener;
-
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference BallConfig = database.getReference("Ball Configuration");
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,15 @@ public class SetupScreen extends AppCompatActivity {
         angleVerticalBar = (SeekBar) findViewById(R.id.angleVerticalControl);
         angleVerticalVal = (TextView) findViewById(R.id.angleVerticalNum);
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference BallConfig = database.getReference("Ball Configuration");
+
+
 
         sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch(seekBar.getId()){
                     case R.id.speedControl: speedVal.setText("" + progress + "");
-                    DatabaseReference speed= database.getReference("Ball Configuration /Speed: ");
+                    DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
                     speed.setValue(progress);
                     break;
                     case R.id.angleHorizontalControl: progress-=6;
@@ -99,14 +100,19 @@ public class SetupScreen extends AppCompatActivity {
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
     }
-
+    DatabaseReference start = database.getReference("Ball Configuration /Start");
+    DatabaseReference stop = database.getReference("Ball Configuration /Stop");
     public void start(View view){
-        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_LONG).show();
-        //Code to start machine
+        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_SHORT).show();
+
+        start.setValue("True");
+        stop.setValue("False");
+
     }
 
     public void stop(View view){
-        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_LONG).show();
-        //Code to stop machine
+        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_SHORT).show();
+        stop.setValue("True");
+        start.setValue("False");
     }
 }

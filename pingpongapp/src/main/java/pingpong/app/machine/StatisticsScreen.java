@@ -24,17 +24,17 @@ public class StatisticsScreen extends AppCompatActivity {
         setContentView(R.layout.activity_statistics_screen);
 
         //All of the invisible text views.
-        final TextView avgSpeedText = (TextView) findViewById(R.id.avgSpeed);
-        final TextView avgSpeedValText = (TextView) findViewById(R.id.avgSpeedVal);
+        final TextView avgSpeedText =  findViewById(R.id.avgSpeed);
+        final TextView avgSpeedValText =  findViewById(R.id.avgSpeedVal);
 
-        final TextView minSpeedText = (TextView) findViewById(R.id.minSpeed);
-        final TextView minSpeedValText = (TextView) findViewById(R.id.minSpeedVal);
+        final TextView minSpeedText =  findViewById(R.id.minSpeed);
+        final TextView minSpeedValText =  findViewById(R.id.minSpeedVal);
 
-        final TextView maxSpeedText = (TextView) findViewById(R.id.maxSpeed);
-        final TextView maxSpeedValText = (TextView) findViewById(R.id.maxSpeedVal);
+        final TextView maxSpeedText =  findViewById(R.id.maxSpeed);
+        final TextView maxSpeedValText =  findViewById(R.id.maxSpeedVal);
 
-        final TextView accuracyText = (TextView) findViewById(R.id.accuracy);
-        final TextView accuracyValText = (TextView) findViewById(R.id.accuracyVal);
+        final TextView accuracyText =  findViewById(R.id.accuracy);
+        final TextView accuracyValText =  findViewById(R.id.accuracyVal);
 
         final TextView shotsTotalText = (TextView) findViewById(R.id.shotTotal);
         final TextView ballShotValText = (TextView) findViewById(R.id.ballShotVal);
