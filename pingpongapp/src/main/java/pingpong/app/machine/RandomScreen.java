@@ -10,6 +10,8 @@ import com.example.machine.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.Math;
+
 public class RandomScreen extends AppCompatActivity {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference BallConfig = database.getReference("Ball Configuration");
@@ -28,9 +30,12 @@ public class RandomScreen extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
         start.setValue("True");
         stop.setValue("False");
-        //speed.setValue(//randval);
-        //horizontalAngle.setValue(//hangle);
-        //verticalAngle.setValue(//vangle);
+        int randval = (int)(Math.random()*61);
+        int hangle = (int)(Math.random()*13)-6;
+        int vangle = (int)(Math.random()*7)-3;
+        speed.setValue(randval);
+        horizontalAngle.setValue(hangle);
+        verticalAngle.setValue(vangle);
     }
 
     public void randStop(View view){
