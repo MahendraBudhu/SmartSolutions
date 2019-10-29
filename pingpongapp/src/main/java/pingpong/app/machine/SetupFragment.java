@@ -42,6 +42,7 @@ public class SetupFragment extends Fragment {
     DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
+    DatabaseReference timer = database.getReference("Ball Configuration /Timer");
 
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,7 +94,7 @@ public class SetupFragment extends Fragment {
                         break;
                     case R.id.timerControl: progress = progress + 2;
                         timeVal.setText("" + progress + "");
-                        //timeVal.setValue(progress);
+                        timer.setValue(progress);
                         break;
 
     }

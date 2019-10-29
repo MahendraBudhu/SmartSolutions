@@ -59,14 +59,16 @@ public class RandomFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_LONG).show();
                 start.setValue("True");
                 stop.setValue("False");
-                int randval = (int)(Math.random()*61);
-                int hangle = (int)(Math.random()*13)-6;
-                int vangle = (int)(Math.random()*7)-3;
-                int timer = (int)(Math.random()*6) +2;
-                speed.setValue(randval);
-                horizontalAngle.setValue(hangle);
-                verticalAngle.setValue(vangle);
-                verticalAngle.setValue(timer);
+                while(start.getValue().equalsIgnoreCase("True")) {
+                    int randval = (int) (Math.random() * 61);
+                    int hangle = (int) (Math.random() * 13) - 6;
+                    int vangle = (int) (Math.random() * 7) - 3;
+                    int timer = (int) (Math.random() * 6) + 2;
+                    speed.setValue(randval);
+                    horizontalAngle.setValue(hangle);
+                    verticalAngle.setValue(vangle);
+                    verticalAngle.setValue(timer);
+                }
             }
         });
 
@@ -85,7 +87,7 @@ public class RandomFragment extends Fragment {
                 switch(seekBar.getId()){
                     case R.id.randTimerControl: progress = progress + 2;
                         randTimeVal.setText("" + progress + "");
-                        //randTimeVal.setValue(progress);
+                        timer.setValue(progress);
                         break;
                 }
             }
