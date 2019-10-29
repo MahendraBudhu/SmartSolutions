@@ -37,31 +37,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:text="@string/randomDesc"
         android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomImage" />
 
-    <Button
-        android:id="@+id/randomStart"
+    <TextView
+        android:id="@+id/randTimerText"
+        android:layout_width="292dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/timerText"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toTopOf="@+id/randomStart"
+        app:layout_constraintStart_toStartOf="@+id/randomDescription"
+        app:layout_constraintTop_toBottomOf="@+id/randomDescription"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/randTimerValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/randBtnStart"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/defaultNum"
+        android:textSize="10pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toEndOf="@+id/randTimerText"
         app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+
+    <SeekBar
+        android:id="@+id/randTimerControl"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:max="5"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randTimerText" />
 
     <Button
         android:id="@+id/randomStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="84dp"
         android:text="@string/randBtnStop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+
+    <Button
+        android:id="@+id/randomStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="116dp"
+        android:text="@string/randBtnStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

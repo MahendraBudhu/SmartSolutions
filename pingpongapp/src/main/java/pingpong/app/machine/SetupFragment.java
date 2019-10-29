@@ -23,10 +23,12 @@ public class SetupFragment extends Fragment {
     public SeekBar speedBar;
     public SeekBar angleHorizontalBar;
     public SeekBar angleVerticalBar;
+    public SeekBar timeBar;
 
     public TextView speedVal;
     public TextView angleHorizontalVal;
     public TextView angleVerticalVal;
+    public TextView timeVal;
 
     public Button stopBtn;
     public Button startBtn;
@@ -61,6 +63,9 @@ public class SetupFragment extends Fragment {
         angleVerticalBar = (SeekBar) v.findViewById(R.id.angleVerticalControl);
         angleVerticalVal = (TextView) v.findViewById(R.id.angleVerticalNum);
 
+        timeBar = (SeekBar) v.findViewById(R.id.timerControl);
+        timeVal = (TextView) v.findViewById(R.id.timerVal);
+
         //Setting up default DB Values
         start.setValue("False");
         stop.setValue("False");
@@ -76,7 +81,7 @@ public class SetupFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch(seekBar.getId()){
                     case R.id.speedControl: speedVal.setText("" + progress + "");
-                         speed.setValue(progress);
+                        speed.setValue(progress);
                         break;
                     case R.id.angleHorizontalControl: progress-=6;
                         angleHorizontalVal.setText("" + progress + "");
@@ -86,20 +91,24 @@ public class SetupFragment extends Fragment {
                         angleVerticalVal.setText("" + progress + "");
                         verticalAngle.setValue(progress);
                         break;
+                    case R.id.timerControl: progress = progress + 2;
+                        timeVal.setText("" + progress + "");
+                        //timeVal.setValue(progress);
+                        break;
 
-                }
-            }
+    }
+}
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
 
-            }
+    }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
 
-            }
-        };
+    }
+};
 
         angleVerticalBar.setOnTouchListener(new SeekBar.OnTouchListener(){ //Used to make vertical bar draggable
             @Override
@@ -122,6 +131,7 @@ public class SetupFragment extends Fragment {
         speedBar.setOnSeekBarChangeListener(sbListener);
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
+        timeBar.setOnSeekBarChangeListener(sbListener);
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -22,6 +22,12 @@ public class RandomFragment extends Fragment {
 
     public Button randStart;
     public Button randStop;
+
+    public SeekBar randTimeBar;
+    public TextView randTimeVal;
+
+    SeekBar.OnSeekBarChangeListener sbListener;
+
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference BallConfig = database.getReference("Ball Configuration");
     DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
@@ -30,6 +36,7 @@ public class RandomFragment extends Fragment {
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
     DatabaseReference timer = database.getReference("Ball Configuration /Timer");
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -43,6 +50,8 @@ public class RandomFragment extends Fragment {
 
         randStart = (Button) v.findViewById(R.id.randomStart);
         randStop = (Button) v.findViewById(R.id.randomStop);
+        randTimeBar = (SeekBar) v.findViewById(R.id.randTimerControl);
+        randTimeVal = (TextView) v.findViewById(R.id.randTimerValue);
 
         randStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +79,29 @@ public class RandomFragment extends Fragment {
             }
         });
 
+        sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                switch(seekBar.getId()){
+                    case R.id.randTimerControl: progress = progress + 2;
+                        randTimeVal.setText("" + progress + "");
+                        //randTimeVal.setValue(progress);
+                        break;
+                }
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        };
+
+        randTimeBar.setOnSeekBarChangeListener(sbListener);
 
         return v;
     }

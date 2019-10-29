@@ -56,4 +56,6 @@
 
     <string name="socialText">Social</string>
     <string name="futurePlans">Users will be able to share their statistics on social medias (Facebook, Twitter, etc.)</string>
+
+    <string name="timerText">Time Interval (in seconds) =</string>
 </resources>
