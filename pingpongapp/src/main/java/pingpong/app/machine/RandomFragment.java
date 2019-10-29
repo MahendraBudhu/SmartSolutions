@@ -72,6 +72,9 @@ public class RandomFragment extends Fragment {
                             speed.setValue(randval);
                             horizontalAngle.setValue(hangle);
                             verticalAngle.setValue(vangle);
+                            if(randTimer < 2){
+                                randTimer = 2;
+                            }
                             TimeUnit.SECONDS.sleep(randTimer);
                             if (rstop == "false") {
                                 start.setValue("False");
