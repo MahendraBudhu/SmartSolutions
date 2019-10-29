@@ -1,12 +1,17 @@
 package pingpong.app.machine;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.machine.R;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -14,19 +19,32 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-    }
-    public void config(View view){ //Goes to setup screen
-        Intent intent = new Intent (this, SetupScreen.class);
-        startActivity(intent);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navigationListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetupFragment()).commit();
     }
 
-    public void settings(View view){ //Goes to settings screen
-        Intent intent = new Intent (this, StatisticsScreen.class);
-        startActivity(intent);
-    }
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFrag = null;
+                    switch(menuItem.getItemId()){
+                        case R.id.nav_manualConfig: selectedFrag = new SetupFragment();
+                        break;
+                        case R.id.nav_randomConfig:  selectedFrag = new RandomFragment();
+                        break;
+                        case R.id.nav_statistics:  selectedFrag = new StatisticsFragment();
+                        break;
+                        case R.id.nav_socialMedia:  selectedFrag = new SetupFragment();
+                        break;
+                    }
 
-    public void random(View view){ //Goes to Random screen
-        Intent intent = new Intent (this, RandomScreen.class);
-        startActivity(intent);
-    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFrag).commit();
+
+                    return true;
+                }
+            };
 }
