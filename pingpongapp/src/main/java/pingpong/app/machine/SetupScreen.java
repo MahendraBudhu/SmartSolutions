@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.machine.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SetupScreen extends AppCompatActivity {
 
@@ -39,17 +41,26 @@ public class SetupScreen extends AppCompatActivity {
         angleVerticalBar = (SeekBar) findViewById(R.id.angleVerticalControl);
         angleVerticalVal = (TextView) findViewById(R.id.angleVerticalNum);
 
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference BallConfig = database.getReference("Ball Configuration");
+
         sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch(seekBar.getId()){
                     case R.id.speedControl: speedVal.setText("" + progress + "");
+                    DatabaseReference speed= database.getReference("Ball Configuration /Speed: ");
+                    speed.setValue(progress);
                     break;
                     case R.id.angleHorizontalControl: progress-=6;
                     angleHorizontalVal.setText("" + progress + "");
+                    DatabaseReference horizontalAngle = database.getReference("Ball Configuration /Horizontal Angle");
+                    horizontalAngle.setValue(progress);
                     break;
                     case R.id.angleVerticalControl: progress-=3;
                     angleVerticalVal.setText("" + progress + "");
+                    DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
+                    verticalAngle.setValue(progress);
                     break;
 
                 }
