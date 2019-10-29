@@ -19,8 +19,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_blue_light"
-                android:backgroundTint="@android:color/holo_blue_bright">
+                android:background="@drawable/gradient_background">
 
                 <TextView
                     android:id="@+id/socialTitle"
