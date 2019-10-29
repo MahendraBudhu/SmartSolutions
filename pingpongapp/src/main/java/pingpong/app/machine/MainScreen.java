@@ -38,7 +38,7 @@ public class MainScreen extends AppCompatActivity {
                         break;
                         case R.id.nav_statistics:  selectedFrag = new StatisticsFragment();
                         break;
-                        case R.id.nav_socialMedia:  selectedFrag = new SetupFragment();
+                        case R.id.nav_socialMedia:  selectedFrag = new SocialFragment();
                         break;
                     }
 

@@ -53,4 +53,7 @@
     <string name="randBtnStart">Start</string>
     <string name="randStartButtonToast">Starting Random Practice!</string>
     <string name="randStopButtonToast">Stopping Random Practice!</string>
+
+    <string name="socialText">Social</string>
+    <string name="futurePlans">Users will be able to share their statistics on social medias (Facebook, Twitter, etc.)</string>
 </resources>
