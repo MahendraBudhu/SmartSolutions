@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:backgroundTint="@android:color/holo_blue_bright"
     tools:context="pingpong.app.machine.RandomFragment">
 
     <TextView
@@ -15,6 +17,9 @@
         android:layout_marginEnd="64dp"
         android:text="@string/randomText"
         android:textSize="14pt"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,11 +38,14 @@
 
     <TextView
         android:id="@+id/randomDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_width="402dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="84dp"
+        android:autoText="false"
         android:text="@string/randomDesc"
         android:textSize="10pt"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomImage" />
