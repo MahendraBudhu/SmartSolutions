@@ -14,8 +14,8 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="16dp"
         android:text="@string/statsTitle"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:textSize="14pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

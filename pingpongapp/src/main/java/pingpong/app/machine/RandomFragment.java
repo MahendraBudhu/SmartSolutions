@@ -18,13 +18,16 @@ import com.example.machine.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.concurrent.TimeUnit;
+
 public class RandomFragment extends Fragment {
 
     public Button randStart;
     public Button randStop;
-
     public SeekBar randTimeBar;
     public TextView randTimeVal;
+    public int  randTimer;
+    public String  rstop;
 
     SeekBar.OnSeekBarChangeListener sbListener;
 
@@ -56,28 +59,46 @@ public class RandomFragment extends Fragment {
         randStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_LONG).show();
-                start.setValue("True");
-                stop.setValue("False");
-                while(start.getValue().equalsIgnoreCase("True")) {
-                    int randval = (int) (Math.random() * 61);
-                    int hangle = (int) (Math.random() * 13) - 6;
-                    int vangle = (int) (Math.random() * 7) - 3;
-                    int timer = (int) (Math.random() * 6) + 2;
-                    speed.setValue(randval);
-                    horizontalAngle.setValue(hangle);
-                    verticalAngle.setValue(vangle);
-                    verticalAngle.setValue(timer);
-                }
+                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
+                Thread t = new Thread() {
+                    public void run() {
+                    try{
+                        start.setValue("True");
+                        stop.setValue("False");
+                        while (true) {
+                            int randval = (int) (Math.random() * 61);
+                            int hangle = (int) (Math.random() * 13) - 6;
+                            int vangle = (int) (Math.random() * 7) - 3;
+                            speed.setValue(randval);
+                            horizontalAngle.setValue(hangle);
+                            verticalAngle.setValue(vangle);
+                            TimeUnit.SECONDS.sleep(randTimer);
+                            if (rstop == "false") {
+                                start.setValue("False");
+                                stop.setValue("True");
+                                rstop = "";
+                                break;
+                            }
+                        }
+                    } catch(
+                    InterruptedException e)
+
+                    {
+                        //Error check
+                    }
+                    }
+                };
+                t.start();
             }
         });
 
         randStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
                 stop.setValue("True");
                 start.setValue("False");
+                rstop = "false";
             }
         });
 
@@ -88,6 +109,7 @@ public class RandomFragment extends Fragment {
                     case R.id.randTimerControl: progress = progress + 2;
                         randTimeVal.setText("" + progress + "");
                         timer.setValue(progress);
+                        randTimer = progress;
                         break;
                 }
             }
