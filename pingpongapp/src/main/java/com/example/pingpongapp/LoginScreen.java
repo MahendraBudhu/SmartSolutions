@@ -31,7 +31,7 @@ public class LoginScreen extends AppCompatActivity {
         String userName = userField.getText().toString();   //Converting user inputs into String
         String passWord = passField.getText().toString();
         username.setValue(userName);    //Storing Username DB Field
-        password.setValue(passWord);    //Storing Password DB Field
+        password.setValue(passWord);    //Storing Password DB Fields
 
         if(userName.length() == 0 && passWord.length() == 0){           //Basic checks for username, password and both. Will be expanded later. This is just a prototype at the moment.
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noBothToast), Toast.LENGTH_LONG).show(); //Change hardcoded toasts!
