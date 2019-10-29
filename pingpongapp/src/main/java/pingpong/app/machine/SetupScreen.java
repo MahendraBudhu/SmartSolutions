@@ -27,22 +27,33 @@ public class SetupScreen extends AppCompatActivity {
     SeekBar.OnSeekBarChangeListener sbListener;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference BallConfig = database.getReference("Ball Configuration");
+    DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
+    DatabaseReference horizontalAngle = database.getReference("Ball Configuration /Horizontal Angle");
+    DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
+    DatabaseReference start = database.getReference("Ball Configuration /Start");
+    DatabaseReference stop = database.getReference("Ball Configuration /Stop");
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_screen);
 
-        speedBar = (SeekBar) findViewById(R.id.speedControl);
-        speedVal = (TextView) findViewById(R.id.speedNum);
+        speedBar =  findViewById(R.id.speedControl);
+        speedVal =  findViewById(R.id.speedNum);
 
-        angleHorizontalBar = (SeekBar) findViewById(R.id.angleHorizontalControl);
-        angleHorizontalVal = (TextView) findViewById(R.id.angleHorizontalNum);
+        angleHorizontalBar =  findViewById(R.id.angleHorizontalControl);
+        angleHorizontalVal =  findViewById(R.id.angleHorizontalNum);
 
-        angleVerticalBar = (SeekBar) findViewById(R.id.angleVerticalControl);
-        angleVerticalVal = (TextView) findViewById(R.id.angleVerticalNum);
+        angleVerticalBar =  findViewById(R.id.angleVerticalControl);
+        angleVerticalVal =  findViewById(R.id.angleVerticalNum);
 
-
+        //Setting up default DB Values
+        start.setValue("False");
+        stop.setValue("False");
+        speed.setValue("0");
+        horizontalAngle.setValue("0");
+        verticalAngle.setValue("0");
 
 
         sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
@@ -50,17 +61,14 @@ public class SetupScreen extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch(seekBar.getId()){
                     case R.id.speedControl: speedVal.setText("" + progress + "");
-                    DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
                     speed.setValue(progress);
                     break;
                     case R.id.angleHorizontalControl: progress-=6;
                     angleHorizontalVal.setText("" + progress + "");
-                    DatabaseReference horizontalAngle = database.getReference("Ball Configuration /Horizontal Angle");
                     horizontalAngle.setValue(progress);
                     break;
                     case R.id.angleVerticalControl: progress-=3;
                     angleVerticalVal.setText("" + progress + "");
-                    DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
                     verticalAngle.setValue(progress);
                     break;
 
@@ -100,11 +108,9 @@ public class SetupScreen extends AppCompatActivity {
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
     }
-    DatabaseReference start = database.getReference("Ball Configuration /Start");
-    DatabaseReference stop = database.getReference("Ball Configuration /Stop");
+
     public void start(View view){
         Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_SHORT).show();
-
         start.setValue("True");
         stop.setValue("False");
 
