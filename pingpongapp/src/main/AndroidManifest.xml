@@ -8,9 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="pingpong.app.machine.RandomScreen"></activity>
-        <activity android:name="pingpong.app.machine.StatisticsScreen" />
-        <activity android:name="pingpong.app.machine.SetupScreen" />
         <activity android:name="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.LoginScreen">
             <intent-filter>

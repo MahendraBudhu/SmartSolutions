@@ -1,20 +1,24 @@
 package pingpong.app.machine;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.machine.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SetupScreen extends AppCompatActivity {
+import com.example.machine.R;
+
+public class SetupFragment extends Fragment {
 
     public SeekBar speedBar;
     public SeekBar angleHorizontalBar;
@@ -24,7 +28,11 @@ public class SetupScreen extends AppCompatActivity {
     public TextView angleHorizontalVal;
     public TextView angleVerticalVal;
 
+    public Button stopBtn;
+    public Button startBtn;
+
     SeekBar.OnSeekBarChangeListener sbListener;
+
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference BallConfig = database.getReference("Ball Configuration");
     DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
@@ -33,20 +41,25 @@ public class SetupScreen extends AppCompatActivity {
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setup_screen);
 
-        speedBar =  findViewById(R.id.speedControl);
-        speedVal =  findViewById(R.id.speedNum);
+    }
 
-        angleHorizontalBar =  findViewById(R.id.angleHorizontalControl);
-        angleHorizontalVal =  findViewById(R.id.angleHorizontalNum);
 
-        angleVerticalBar =  findViewById(R.id.angleVerticalControl);
-        angleVerticalVal =  findViewById(R.id.angleVerticalNum);
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.setup_fragment, container, false);
+        speedBar = (SeekBar) v.findViewById(R.id.speedControl);
+        speedVal = (TextView) v.findViewById(R.id.speedNum);
+
+        angleHorizontalBar = (SeekBar) v.findViewById(R.id.angleHorizontalControl);
+        angleHorizontalVal = (TextView) v.findViewById(R.id.angleHorizontalNum);
+
+        angleVerticalBar = (SeekBar) v.findViewById(R.id.angleVerticalControl);
+        angleVerticalVal = (TextView) v.findViewById(R.id.angleVerticalNum);
 
         //Setting up default DB Values
         start.setValue("False");
@@ -55,22 +68,24 @@ public class SetupScreen extends AppCompatActivity {
         horizontalAngle.setValue("0");
         verticalAngle.setValue("0");
 
+        stopBtn = (Button) v.findViewById(R.id.stopBtn);
+        startBtn = (Button) v.findViewById(R.id.startBtn);
 
         sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch(seekBar.getId()){
                     case R.id.speedControl: speedVal.setText("" + progress + "");
-                    speed.setValue(progress);
-                    break;
+                         speed.setValue(progress);
+                        break;
                     case R.id.angleHorizontalControl: progress-=6;
-                    angleHorizontalVal.setText("" + progress + "");
-                    horizontalAngle.setValue(progress);
-                    break;
+                        angleHorizontalVal.setText("" + progress + "");
+                        horizontalAngle.setValue(progress);
+                        break;
                     case R.id.angleVerticalControl: progress-=3;
-                    angleVerticalVal.setText("" + progress + "");
-                    verticalAngle.setValue(progress);
-                    break;
+                        angleVerticalVal.setText("" + progress + "");
+                        verticalAngle.setValue(progress);
+                        break;
 
                 }
             }
@@ -107,18 +122,27 @@ public class SetupScreen extends AppCompatActivity {
         speedBar.setOnSeekBarChangeListener(sbListener);
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
-    }
 
-    public void start(View view){
-        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_SHORT).show();
-        start.setValue("True");
-        stop.setValue("False");
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_LONG).show();
+                start.setValue("True");
+                stop.setValue("False");
+            }
+        });
 
-    }
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_LONG).show();
+                stop.setValue("True");
+                start.setValue("False");
+            }
+        });
 
-    public void stop(View view){
-        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_SHORT).show();
-        stop.setValue("True");
-        start.setValue("False");
+
+
+        return v;
     }
 }
