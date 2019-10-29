@@ -29,7 +29,7 @@ public class RandomFragment extends Fragment {
     DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
-
+    DatabaseReference timer = database.getReference("Ball Configuration /Timer");
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -53,9 +53,11 @@ public class RandomFragment extends Fragment {
                 int randval = (int)(Math.random()*61);
                 int hangle = (int)(Math.random()*13)-6;
                 int vangle = (int)(Math.random()*7)-3;
+                int timer = (int)(Math.random()*6) +2;
                 speed.setValue(randval);
                 horizontalAngle.setValue(hangle);
                 verticalAngle.setValue(vangle);
+                verticalAngle.setValue(timer);
             }
         });
 

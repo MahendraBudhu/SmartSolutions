@@ -1041,6 +1041,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable github
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_launcher_background
@@ -1070,6 +1071,7 @@ drawable notify_panel_notification_icon_bg
 drawable random
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable twitter
 id ALT
 id CTRL
 id FUNCTION
@@ -1167,7 +1169,9 @@ id filled
 id fixed
 id forever
 id fragment_container
+id futurePlan
 id ghost_view
+id githubImg
 id gone
 id group_divider
 id groups
@@ -1269,6 +1273,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id socialTitle
 id spacer
 id speedControl
 id speedNum
@@ -1314,6 +1319,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id twitterImg
 id uniform
 id unlabeled
 id up
@@ -1411,6 +1417,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout setup_fragment
+layout social_fragment
 layout statistics_fragment
 layout support_simple_spinner_dropdown_item
 menu bottom_navigation
@@ -1494,6 +1501,7 @@ string default_web_client_id
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
+string futurePlans
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -1529,6 +1537,7 @@ string setupText
 string shotTotal
 string shotsHit
 string shotsMissed
+string socialText
 string speedNumberDefault
 string speedTitle
 string startButton

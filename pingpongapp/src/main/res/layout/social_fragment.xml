@@ -18,7 +18,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_blue_light"
+                android:backgroundTint="@android:color/holo_blue_bright">
 
                 <TextView
                     android:id="@+id/socialTitle"
@@ -61,12 +63,13 @@
                     android:id="@+id/futurePlan"
                     android:layout_width="370dp"
                     android:layout_height="103dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginEnd="21dp"
+                    android:gravity="center_horizontal"
                     android:text="@string/futurePlans"
                     android:textSize="12pt"
-                    android:gravity="center_horizontal"
-                    android:layout_gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
