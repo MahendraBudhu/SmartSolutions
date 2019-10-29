@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pingpongapp.test" >
+    package="pingpong.app.machine.test" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -10,8 +10,8 @@
         android:name="androidx.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.example.pingpongapp"
-        android:targetPackage="com.example.pingpongapp" />
+        android:label="Tests for pingpong.app.machine"
+        android:targetPackage="pingpong.app.machine" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />

@@ -1,33 +1,33 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.pingpongapp.test" >
+3    package="pingpong.app.machine.test" >
 4
 5    <uses-sdk
-5-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:5:5-74
+5-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:5:5-74
 6        android:minSdkVersion="23"
-6-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:5:15-41
+6-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:5:42-71
+7-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:5:42-71
 8
 9    <instrumentation
-9-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:11:5-15:73
+9-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:11:5-15:70
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:11:22-76
+10-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:11:22-76
 11        android:functionalTest="false"
-11-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:14:22-52
+11-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:14:22-52
 12        android:handleProfiling="false"
-12-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:13:22-53
-13        android:label="Tests for com.example.pingpongapp"
-13-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:15:22-71
-14        android:targetPackage="com.example.pingpongapp" />
-14-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:12:22-69
+12-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:13:22-53
+13        android:label="Tests for pingpong.app.machine"
+13-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:15:22-68
+14        android:targetPackage="pingpong.app.machine" />
+14-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:12:22-66
 15
 16    <application android:debuggable="true" >
-16-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:7:5-9:19
-16-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:7:18-43
+16-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:7:5-9:19
+16-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:7:18-43
 17        <uses-library android:name="android.test.runner" />
-17-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:8:9-60
-17-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger6634649583040051700.xml:8:23-57
+17-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:8:9-60
+17-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4945587994692812531.xml:8:23-57
 18    </application>
 19
 20</manifest>

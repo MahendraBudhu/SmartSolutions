@@ -46,7 +46,7 @@ INJECTED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\sr
 INJECTED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:3:5-38
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 	android:versionName
@@ -91,26 +91,26 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Ma
 		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-40
-activity#com.example.pingpongapp.RandomScreen
-ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-59
+activity#pingpong.app.machine.RandomScreen
+ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-79
 	android:name
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-47
-activity#com.example.pingpongapp.StatisticsScreen
-ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-67
+activity#pingpong.app.machine.StatisticsScreen
+ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-74
 	android:name
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:19-51
-activity#com.example.pingpongapp.SetupScreen
-ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:9-49
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:19-71
+activity#pingpong.app.machine.SetupScreen
+ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:9-69
 	android:name
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:19-46
-activity#com.example.pingpongapp.MainScreen
-ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:9-48
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:19-66
+activity#pingpong.app.machine.MainScreen
+ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:9-68
 	android:name
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:19-45
-activity#com.example.pingpongapp.LoginScreen
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:19-65
+activity#pingpong.app.machine.LoginScreen
 ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:19-46
+		ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:19-66
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
