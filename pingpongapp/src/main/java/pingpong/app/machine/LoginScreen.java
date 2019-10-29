@@ -20,7 +20,7 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
     }
 
-    //Validating Login Info
+    //Validating Login Infos
     public void login(View view){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference login = database.getReference("Login");
