@@ -1,57 +1,110 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.pingpongapp"
+3    package="pingpong.app.machine"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml
+8-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml
+9-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:5:5-22:19
-12        android:allowBackup="true"
-12-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:8:9-41
-17        android:supportsRtl="true"
-17-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:9:9-35
-18        android:testOnly="true"
-19        android:theme="@style/AppTheme" >
-19-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:10:9-40
-20        <activity android:name="com.example.pingpongapp.RandomScreen" />
-20-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:11:9-59
-20-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:11:19-47
-21        <activity android:name="com.example.pingpongapp.StatisticsScreen" />
-21-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:12:9-54
-21-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:12:19-51
-22        <activity android:name="com.example.pingpongapp.SetupScreen" />
-22-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:13:9-49
-22-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:13:19-46
-23        <activity android:name="com.example.pingpongapp.MainScreen" />
-23-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:14:9-48
-23-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:14:19-45
-24        <activity android:name="com.example.pingpongapp.LoginScreen" >
-24-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:15:9-21:20
-24-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:15:19-46
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\ea41f65506720c2a815598e68825d42c\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:5-79
+11-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\ea41f65506720c2a815598e68825d42c\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\ea41f65506720c2a815598e68825d42c\jetified-firebase-database-16.0.4\AndroidManifest.xml:23:5-67
+12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\ea41f65506720c2a815598e68825d42c\jetified-firebase-database-16.0.4\AndroidManifest.xml:23:22-64
+13
+14    <application
+14-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:5-19:19
+15        android:allowBackup="true"
+15-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:6:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:7:9-43
+19        android:label="@string/app_name"
+19-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:8:9-41
+20        android:supportsRtl="true"
+20-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:9:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-40
+23        <activity android:name="pingpong.app.machine.MainScreen" />
+23-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-68
+23-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-65
+24        <activity android:name="pingpong.app.machine.LoginScreen" >
+24-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-18:20
+24-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:19-66
 25            <intent-filter>
-25-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:16:13-20:29
+25-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:13-17:29
 26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:17:17-69
-26-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:17:25-66
+26-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:17-69
+26-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:25-66
 27
 28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:19:17-77
-28-->C:\Users\Mahen\AndroidStudioProjects\Mahendra\pingpongapp\src\main\AndroidManifest.xml:19:27-74
+28-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:17-77
+28-->C:\Users\Mahen\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:27-74
 29            </intent-filter>
 30        </activity>
-31    </application>
-32
-33</manifest>
+31        <activity
+31-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:24:9-31:50
+32            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+32-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:25:13-85
+33            android:excludeFromRecents="true"
+33-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:26:13-46
+34            android:exported="true"
+34-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:27:13-36
+35            android:launchMode="singleTask"
+35-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:28:13-44
+36            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+36-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:29:13-102
+37            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+37-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:30:13-72
+38
+39        <service
+39-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:33:9-39:19
+40            android:name="com.google.firebase.components.ComponentDiscoveryService"
+40-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:34:13-84
+41            android:exported="false" >
+41-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:35:13-37
+42            <meta-data
+42-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:36:13-38:85
+43                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+43-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:37:17-109
+44                android:value="com.google.firebase.components.ComponentRegistrar" />
+44-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\14b1b4883ef2e8f74a4851994cc67daf\jetified-firebase-auth-16.0.5\AndroidManifest.xml:38:17-82
+45        </service>
+46
+47        <activity
+47-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\0e324f24ca1319f2369832e92c75cc74\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+48            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+48-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\0e324f24ca1319f2369832e92c75cc74\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+49            android:exported="false"
+49-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\0e324f24ca1319f2369832e92c75cc74\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+50            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+50-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\0e324f24ca1319f2369832e92c75cc74\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+51
+52        <provider
+52-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\a4d769a23a6d36a17c048ee7879316e6\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+53            android:name="com.google.firebase.provider.FirebaseInitProvider"
+53-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\a4d769a23a6d36a17c048ee7879316e6\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+54            android:authorities="pingpong.app.machine.firebaseinitprovider"
+54-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\a4d769a23a6d36a17c048ee7879316e6\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+55            android:exported="false"
+55-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\a4d769a23a6d36a17c048ee7879316e6\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+56            android:initOrder="100" />
+56-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\a4d769a23a6d36a17c048ee7879316e6\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+57
+58        <meta-data
+58-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\bad61aad1af6b35cc0d1b0eccb62836b\jetified-play-services-basement-16.1.0\AndroidManifest.xml:23:9-25:69
+59            android:name="com.google.android.gms.version"
+59-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\bad61aad1af6b35cc0d1b0eccb62836b\jetified-play-services-basement-16.1.0\AndroidManifest.xml:24:13-58
+60            android:value="@integer/google_play_services_version" />
+60-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Mahen\.gradle\caches\transforms-2\files-2.1\bad61aad1af6b35cc0d1b0eccb62836b\jetified-play-services-basement-16.1.0\AndroidManifest.xml:25:13-66
+61    </application>
+62
+63</manifest>

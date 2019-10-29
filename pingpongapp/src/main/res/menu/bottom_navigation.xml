@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_manualConfig"
+        android:icon="@drawable/ic_manual_config_24dp"
+        android:title="Manual Config" />
+
+    <item
+        android:id="@+id/nav_randomConfig"
+        android:icon="@drawable/ic_random_24dp"
+        android:title="Random Config" />
+
+    <item
+        android:id="@+id/nav_statistics"
+        android:icon="@drawable/ic_statistics_24dp"
+        android:title="Statistics" />
+
+    <item
+        android:id="@+id/nav_socialMedia"
+        android:icon="@drawable/ic_social_media_24dp"
+        android:title="Social" />
+
+</menu>

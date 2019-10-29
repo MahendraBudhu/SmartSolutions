@@ -1,50 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_above="@id/bottom_navigation"
+    android:background="@color/common_google_signin_btn_text_light_pressed"
+    android:backgroundTint="@color/common_google_signin_btn_text_light_pressed"
     android:orientation="vertical"
-    tools:context=".MainScreen">
+    tools:context="pingpong.app.machine.MainScreen">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_navigation" />
 
-        <Button
-            android:id="@+id/setupButton"
-            android:layout_width="0dp"
-            android:layout_height="59dp"
-            android:layout_marginTop="9dp"
-            android:onClick="config"
-            android:text="@string/setupBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="0dp"
-            android:layout_height="59dp"
-            android:layout_marginTop="80dp"
-            android:onClick="settings"
-            android:text="@string/statsBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/randomPracticeButton"
-            android:layout_width="0dp"
-            android:layout_height="59dp"
-            android:layout_marginTop="152dp"
-            android:onClick="random"
-            android:text="@string/randomBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</FrameLayout>
