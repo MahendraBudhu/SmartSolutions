@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "204566052037",
+    "firebase_url": "https://pingpongmachine-d18ca.firebaseio.com",
+    "project_id": "pingpongmachine-d18ca",
+    "storage_bucket": "pingpongmachine-d18ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204566052037:android:8a3c1f30136301726c44ac",
+        "android_client_info": {
+          "package_name": "pingpong.app.machine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204566052037-m9f3kqjll3u0omfr7aadm0552bu54bfb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pingpong.app.machine",
+            "certificate_hash": "d38c420841e2e112183fec56f73e3bcb11fafa90"
+          }
+        },
+        {
+          "client_id": "204566052037-qtpdgkd14f4f185g0dsimhb925l3655o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMPG-TWGf2CytchlV2M-iaLkTDIDXHz6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204566052037-qtpdgkd14f4f185g0dsimhb925l3655o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
