@@ -6,36 +6,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.machine.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class SocialFragment extends Fragment {
+public class SocialScreen extends AppCompatActivity {
 
     public ImageView twitterImg;
     public ImageView githubImg;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.social_screen);
+        twitterImg = (ImageView) findViewById(R.id.twitterImg) ;
+        githubImg = (ImageView) findViewById(R.id.githubImg);
 
-    }
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.social_fragment, container, false);
-
-        twitterImg = (ImageView) v.findViewById(R.id.twitterImg);
-        githubImg = (ImageView) v.findViewById(R.id.githubImg);
 
         twitterImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +48,6 @@ public class SocialFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        return v;
     }
+
 }

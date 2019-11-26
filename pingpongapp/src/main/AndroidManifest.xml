@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="pingpong.app.machine.RegisterScreen" />
+        <activity
+            android:name="pingpong.app.machine.SocialScreen"
+            android:parentActivityName="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.LoginScreen">
             <intent-filter>

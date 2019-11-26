@@ -72,4 +72,6 @@
     <string name="registerfailed">Register Failed!</string>
     <string name="emailsent">Verification email sent to</string>
     <string name="notsent">Failed to send verification email.</string>
+    <string name="signOut">Sign out</string>
+    <string name="socialTextTB">Social</string>
 </resources>
