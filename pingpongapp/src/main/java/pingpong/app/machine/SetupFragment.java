@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class SetupFragment extends Fragment {
     public TextView angleVerticalVal;
     public TextView timeVal;
 
+    public Spinner spinTypes;
+
     public Button stopBtn;
     public Button startBtn;
 
@@ -43,6 +47,7 @@ public class SetupFragment extends Fragment {
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
     DatabaseReference timer = database.getReference("Ball Configuration /Timer");
+    DatabaseReference spin = database.getReference("Ball Configuration /Spin");
 
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,12 +72,15 @@ public class SetupFragment extends Fragment {
         timeBar = (SeekBar) v.findViewById(R.id.timerControl);
         timeVal = (TextView) v.findViewById(R.id.timerVal);
 
+        spinTypes = (Spinner) v.findViewById(R.id.spinChoices);
+
         //Setting up default DB Values
         start.setValue("False");
         stop.setValue("False");
         speed.setValue("0");
         horizontalAngle.setValue("0");
         verticalAngle.setValue("0");
+        spin.setValue("Flat");
 
         stopBtn = (Button) v.findViewById(R.id.stopBtn);
         startBtn = (Button) v.findViewById(R.id.startBtn);
@@ -133,6 +141,18 @@ public class SetupFragment extends Fragment {
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
         timeBar.setOnSeekBarChangeListener(sbListener);
+
+        spinTypes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spin.setValue(spinTypes.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //Do nothing
+            }
+        });
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override

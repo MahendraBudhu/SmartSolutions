@@ -169,12 +169,30 @@
                     android:layout_height="42dp"
                     android:layout_marginStart="52dp"
                     android:layout_marginTop="168dp"
-                    android:layout_marginBottom="36dp"
                     android:text="@string/timerText"
                     android:textSize="10pt"
-                    app:layout_constraintBottom_toTopOf="@+id/randomStart"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
+
+                <TextView
+                    android:id="@+id/spinText"
+                    android:layout_width="135dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="136dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/spinText"
+                    android:textSize="10pt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
+
+                <Spinner
+                    android:id="@+id/spinChoices"
+                    android:layout_width="406dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="64dp"
+                    android:entries="@array/spinTypes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
 
                 <TextView
                     android:id="@+id/timerVal"
@@ -188,16 +206,6 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/timerText"
                     app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
-
-                <Button
-                    android:id="@+id/stopBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="80dp"
-                    android:text="@string/stopButton"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
 
                 <TextView
                     android:id="@+id/ballCountTitle"
@@ -222,11 +230,21 @@
                     app:layout_constraintTop_toBottomOf="@+id/startBtn" />
 
                 <Button
+                    android:id="@+id/stopBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="152dp"
+                    android:layout_marginEnd="84dp"
+                    android:text="@string/stopButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
+
+                <Button
                     android:id="@+id/startBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginTop="152dp"
                     android:text="@string/startButton"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/timerControl" />

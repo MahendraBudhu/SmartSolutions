@@ -74,4 +74,11 @@
     <string name="notsent">Failed to send verification email.</string>
     <string name="signOut">Sign out</string>
     <string name="socialTextTB">Social</string>
+
+    <string name="spinText">Type of Spin</string>
+    <string-array name="spinTypes">
+        <item>Flat</item>
+        <item>Topspin</item>
+        <item>Backspin</item>
+    </string-array>
 </resources>
