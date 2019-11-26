@@ -2,7 +2,6 @@ package pingpong.app.machine;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -17,8 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginScreen extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -27,20 +24,33 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+        mAuth = FirebaseAuth.getInstance();
     }
     //Validating Login Infos
     public void login(View view){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference login = database.getReference("Login");
-        DatabaseReference username = database.getReference("Login/Username: ");     //Making Username DB Field
-        DatabaseReference password = database.getReference("Login/Password: ");     //Making Password DB Field
         TextView userField =  findViewById(R.id.username);    //Getting user inputs
         TextView passField =  findViewById(R.id.password);
+        String username = userField.getText().toString();
+        String password = passField.getText().toString();
+        mAuth.signInWithEmailAndPassword(username, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginScreen.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
         String userName = userField.getText().toString();   //Converting user inputs into String
         String passWord = passField.getText().toString();
-        username.setValue(userName);    //Storing Username DB Field
-        password.setValue(passWord);    //Storing Password DB Fields
 
         if(userName.length() == 0 && passWord.length() == 0){           //Basic checks for username, password and both. Will be expanded later. This is just a prototype at the moment.
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noBothToast), Toast.LENGTH_LONG).show(); //Change hardcoded toasts!
@@ -53,10 +63,6 @@ public class LoginScreen extends AppCompatActivity {
         }
         else {
             Intent intent = new Intent(this, MainScreen.class);
-
-            intent.putExtra("userKey", userName);
-            intent.putExtra("passKey", passWord);
-
             startActivity(intent);
         }
     }
@@ -64,5 +70,8 @@ public class LoginScreen extends AppCompatActivity {
     //Sending user to register screen
     public void register(View view){
         Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.wipToast), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, RegisterScreen.class);
+        startActivity(intent);
     }
+
 }
