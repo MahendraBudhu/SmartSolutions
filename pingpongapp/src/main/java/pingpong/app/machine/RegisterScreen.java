@@ -52,9 +52,11 @@ public class RegisterScreen extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.registersuccess), Toast.LENGTH_LONG).show();
                             sendEmailVerification();
                             String emails = "Users/" + user.getUid();
+                            String emailEntry = "Users/" + user.getUid() + "/Email: ";
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference users = database.getReference(emails);
-                            users.setValue(userName);
+                            DatabaseReference emailVal = database.getReference(emailEntry);
+                            emailVal.setValue(userName);
                             Intent intent = new Intent(RegisterScreen.this, LoginScreen.class);
                             startActivity(intent);
                         } else {
