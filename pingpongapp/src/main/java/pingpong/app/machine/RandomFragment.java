@@ -39,6 +39,7 @@ public class RandomFragment extends Fragment {
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
     DatabaseReference timer = database.getReference("Ball Configuration /Timer");
+    DatabaseReference spin = database.getReference("Ball Configuration /Spin");
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +70,16 @@ public class RandomFragment extends Fragment {
                             int randval = (int) (Math.random() * 61);
                             int hangle = (int) (Math.random() * 13) - 6;
                             int vangle = (int) (Math.random() * 7) - 3;
+                            int spinChoice = (int) (Math.random() * 101);
+                            if(spinChoice < 34){
+                                spin.setValue("Flat");
+                            }
+                            else if(spinChoice >= 34 && spinChoice < 67){
+                                spin.setValue("Topspin");
+                            }
+                            else if(spinChoice >= 67){
+                                spin.setValue("Backspin");
+                            }
                             speed.setValue(randval);
                             horizontalAngle.setValue(hangle);
                             verticalAngle.setValue(vangle);
