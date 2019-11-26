@@ -70,4 +70,6 @@
     <string name="loginfailed">Login Failed!</string>
     <string name="registersuccess">Register Success!</string>
     <string name="registerfailed">Register Failed!</string>
+    <string name="emailsent">Verification email sent to</string>
+    <string name="notsent">Failed to send verification email.</string>
 </resources>

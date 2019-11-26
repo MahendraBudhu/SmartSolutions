@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class RegisterScreen extends AppCompatActivity {
@@ -49,7 +51,11 @@ public class RegisterScreen extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.registersuccess), Toast.LENGTH_LONG).show();
                             sendEmailVerification();
-                            Intent intent = new Intent(RegisterScreen.this, RegisterScreen.class);
+                            String emails = "Users/" + user.getUid();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference users = database.getReference(emails);
+                            users.setValue(userName);
+                            Intent intent = new Intent(RegisterScreen.this, LoginScreen.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -69,11 +75,11 @@ public class RegisterScreen extends AppCompatActivity {
                         // Re-enable button
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(RegisterScreen.this, "Verification email sent to " + user.getEmail(),
+                            Toast.makeText(RegisterScreen.this, getString(R.string.emailsent)  + user.getEmail(),
                                     Toast.LENGTH_LONG).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(RegisterScreen.this, "Failed to send verification email.",
+                            Toast.makeText(RegisterScreen.this, getString(R.string.notsent),
                                     Toast.LENGTH_LONG).show();
                         }
                     }
