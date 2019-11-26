@@ -51,10 +51,40 @@ public class RegisterScreen extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.registersuccess), Toast.LENGTH_LONG).show();
                             sendEmailVerification();
+
+                            //Setting default parameters for when user registers in the database
                             String emailEntry = "Users/" + user.getUid() + "/Email: ";
+                            String avgSpeedUser = "Users/" + user.getUid() + "/Average Speed: ";;
+                            String minSpeedUser = "Users/" + user.getUid() + "/Minimum Speed: ";;
+                            String maxSpeedUser = "Users/" + user.getUid() + "/Maximum Speed ";;
+                            String accuracyUser = "Users/" + user.getUid() + "/Accuracy ";;
+                            String totalShotsUser = "Users/" + user.getUid() + "/Total Shots Fired: ";;
+                            String totalHitUser = "Users/" + user.getUid() + "/Total Balls Hit: ";;
+                            String totalMissedUser = "Users/" + user.getUid() + "/Total Balls Missed: ";;
+
+
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
+
                             DatabaseReference emailVal = database.getReference(emailEntry);
+                            DatabaseReference avgSpeedVal = database.getReference(avgSpeedUser);
+                            DatabaseReference minSpeedVal = database.getReference(minSpeedUser);
+                            DatabaseReference maxSpeedVal = database.getReference(maxSpeedUser);
+                            DatabaseReference accVal = database.getReference(accuracyUser);
+                            DatabaseReference totalShotsVal = database.getReference(totalShotsUser);
+                            DatabaseReference totalHitVal = database.getReference(totalHitUser);
+                            DatabaseReference totalMissedVal = database.getReference(totalMissedUser);
+
+
                             emailVal.setValue(userName);
+                            avgSpeedVal.setValue("0");
+                            minSpeedVal.setValue("0");
+                            maxSpeedVal.setValue("0");
+                            accVal.setValue("0.00%");
+                            totalShotsVal.setValue("0");
+                            totalHitVal.setValue("0");
+                            totalMissedVal.setValue("0");
+
+                            //Sending user back to login screen
                             Intent intent = new Intent(RegisterScreen.this, LoginScreen.class);
                             startActivity(intent);
                         } else {
