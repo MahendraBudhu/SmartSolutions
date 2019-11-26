@@ -1,5 +1,6 @@
 package pingpong.app.machine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,11 +47,34 @@ public class RegisterScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.registersuccess), Toast.LENGTH_LONG).show();
+                            sendEmailVerification();
+                            Intent intent = new Intent(RegisterScreen.this, RegisterScreen.class);
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(RegisterScreen.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.registerfailed), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+    }
+    private void sendEmailVerification() {
+        final FirebaseUser user = mAuth.getCurrentUser();
+        user.sendEmailVerification()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // [START_EXCLUDE]
+                        // Re-enable button
+
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterScreen.this, "Verification email sent to " + user.getEmail(),
+                                    Toast.LENGTH_LONG).show();
+                        } else {
+                            Log.e(TAG, "sendEmailVerification", task.getException());
+                            Toast.makeText(RegisterScreen.this, "Failed to send verification email.",
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });

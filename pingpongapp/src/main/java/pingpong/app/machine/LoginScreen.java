@@ -40,36 +40,30 @@ public class LoginScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.loginsucess), Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(LoginScreen.this, MainScreen.class);
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginScreen.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.loginfailed), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
 
-        String userName = userField.getText().toString();   //Converting user inputs into String
-        String passWord = passField.getText().toString();
-
-        if(userName.length() == 0 && passWord.length() == 0){           //Basic checks for username, password and both. Will be expanded later. This is just a prototype at the moment.
+        if(username.length() == 0 && password.length() == 0){           //Basic checks for username, password and both. Will be expanded later. This is just a prototype at the moment.
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noBothToast), Toast.LENGTH_LONG).show(); //Change hardcoded toasts!
         }
-        else if(userName.length() == 0){
+        else if(username.length() == 0){
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noUserToast), Toast.LENGTH_LONG).show(); //Change hardcoded toasts!
         }
-        else if(passWord.length() == 0){
+        else if(password.length() == 0){
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.noPassToast), Toast.LENGTH_LONG).show(); //Change hardcoded toasts!
-        }
-        else {
-            Intent intent = new Intent(this, MainScreen.class);
-            startActivity(intent);
         }
     }
 
     //Sending user to register screen
     public void register(View view){
-        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.wipToast), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, RegisterScreen.class);
         startActivity(intent);
     }
