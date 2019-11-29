@@ -75,10 +75,11 @@
     <string name="signOut">Déconnexion</string>
     <string name="socialTextTB">Social</string>
 
-    <string name="spinText">Type de spin</string>
-    <string-array name="spinTypes">
-        <item>Plat</item>
-        <item>Topspin</item>
-        <item>Backspin</item>
-    </string-array>
+    <string name="spin1">Plat</string>
+    <string name="spin2">Topspin</string>
+    <string name="spin3">Backspin</string>
+    <string name="spinText">Types de Spin</string>
+
+    <string name="onOffText">Début/Arrêtez</string>
+
 </resources>

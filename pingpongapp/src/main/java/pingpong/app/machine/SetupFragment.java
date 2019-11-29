@@ -7,8 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +36,9 @@ public class SetupFragment extends Fragment {
     public TextView angleVerticalVal;
     public TextView timeVal;
 
-    public Spinner spinTypes;
+    public RadioGroup spinTypes;
 
-    public Button stopBtn;
-    public Button startBtn;
+    public Switch onOff;
 
     SeekBar.OnSeekBarChangeListener sbListener;
 
@@ -72,18 +75,17 @@ public class SetupFragment extends Fragment {
         timeBar = (SeekBar) v.findViewById(R.id.timerControl);
         timeVal = (TextView) v.findViewById(R.id.timerVal);
 
-        spinTypes = (Spinner) v.findViewById(R.id.spinChoices);
+        spinTypes = (RadioGroup) v.findViewById(R.id.spinChoices);
 
         //Setting up default DB Values
         start.setValue("False");
-        stop.setValue("False");
+        stop.setValue("True");
         speed.setValue("0");
         horizontalAngle.setValue("0");
         verticalAngle.setValue("0");
         spin.setValue("Flat");
 
-        stopBtn = (Button) v.findViewById(R.id.stopBtn);
-        startBtn = (Button) v.findViewById(R.id.startBtn);
+        onOff = (Switch) v.findViewById(R.id.onOff);
 
         sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
             @Override
@@ -119,60 +121,36 @@ public class SetupFragment extends Fragment {
     }
 };
 
-        angleVerticalBar.setOnTouchListener(new SeekBar.OnTouchListener(){ //Used to make vertical bar draggable
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                int userAction = event.getAction();
-                switch(userAction){
-                    case MotionEvent.ACTION_DOWN:
-                        view.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        view.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                }
-
-                view.onTouchEvent(event);
-                return true;
-            }
-        });
-
         speedBar.setOnSeekBarChangeListener(sbListener);
         angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
         angleVerticalBar.setOnSeekBarChangeListener(sbListener);
         timeBar.setOnSeekBarChangeListener(sbListener);
 
-        spinTypes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spin.setValue(spinTypes.getSelectedItem().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //Do nothing
-            }
-        });
-
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_LONG).show();
-                start.setValue("True");
-                stop.setValue("False");
-            }
-        });
-
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_LONG).show();
-                stop.setValue("True");
-                start.setValue("False");
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String spinRequest = chosenOption.getText().toString();
+                spin.setValue(spinRequest);
             }
         });
 
 
+        onOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.startButtonToast), Toast.LENGTH_LONG).show();
+                    start.setValue("True");
+                    stop.setValue("False");
+                }
+                else{
+                    Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.stopButtonToast), Toast.LENGTH_LONG).show();
+                    stop.setValue("True");
+                    start.setValue("False");
+                }
+            }
+        });
 
         return v;
     }
