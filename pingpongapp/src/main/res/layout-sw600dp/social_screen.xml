@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pingpong.app.machine.SocialScreen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_background">
+
+                <TextView
+                    android:id="@+id/socialTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="162dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="162dp"
+                    android:text="@string/socialText"
+                    android:textSize="14pt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/twitterImg"
+                    android:layout_width="218dp"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="97dp"
+                    android:src="@drawable/twitter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/socialTitle" />
+
+                <ImageView
+                    android:id="@+id/githubImg"
+                    android:layout_width="237dp"
+                    android:layout_height="217dp"
+                    android:layout_marginStart="87dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="87dp"
+                    android:src="@drawable/github"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/twitterImg" />
+
+                <TextView
+                    android:id="@+id/futurePlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="103dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="21dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/futurePlans"
+                    android:textSize="12pt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/githubImg" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/futurePlan"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:layout_editor_absoluteX="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
