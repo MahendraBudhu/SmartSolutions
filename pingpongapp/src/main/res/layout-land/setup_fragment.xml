@@ -25,12 +25,13 @@
                     android:id="@+id/setupTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="66dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="64dp"
                     android:text="@string/setupText"
                     android:textSize="14pt"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.521"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,12 +64,40 @@
                     android:layout_width="328dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="40dp"
-                    android:layout_marginTop="128dp"
+                    android:layout_marginTop="144dp"
                     android:layout_marginEnd="40dp"
                     android:max="60"
                     android:progress="0"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintHorizontal_bias="0.56"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/angleHorizontalControl"
+                    android:layout_width="328dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="276dp"
+                    android:layout_marginEnd="40dp"
+                    android:max="12"
+                    android:progress="6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.56"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/angleVerticalControl"
+                    android:layout_width="328dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="404dp"
+                    android:layout_marginEnd="40dp"
+                    android:max="6"
+                    android:progress="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.56"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,25 +129,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="32dp"
                     android:text="@string/angleNumberDefault"
                     android:textSize="12pt"
                     app:layout_constraintStart_toEndOf="@+id/angleHorizontalTitle"
                     app:layout_constraintTop_toBottomOf="@+id/speedControl" />
-
-                <SeekBar
-                    android:id="@+id/angleHorizontalControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="260dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="12"
-                    android:progress="6"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/anglesDivider"
@@ -155,20 +170,6 @@
                     app:layout_constraintStart_toEndOf="@+id/angleVerticalTitle"
                     app:layout_constraintTop_toBottomOf="@+id/angleHorizontalControl" />
 
-                <SeekBar
-                    android:id="@+id/angleVerticalControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="388dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="6"
-                    android:progress="3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <View
                     android:id="@+id/angleTimeDivider"
                     android:layout_width="wrap_content"
@@ -188,16 +189,16 @@
                     android:max="5"
                     android:progress="0"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintHorizontal_bias="0.56"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/timerText" />
 
                 <TextView
                     android:id="@+id/timerText"
-                    android:layout_width="309dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="52dp"
+                    android:layout_width="295dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="36dp"
                     android:text="@string/timerText"
                     android:textSize="10pt"
                     app:layout_constraintStart_toStartOf="parent"
@@ -207,12 +208,12 @@
                     android:id="@+id/timerVal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="52dp"
+                    android:layout_marginTop="36dp"
                     android:layout_marginEnd="56dp"
                     android:text="@string/defaultNumTimer"
                     android:textSize="10pt"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.739"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/timerText"
                     app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
 
@@ -283,8 +284,8 @@
                     android:id="@+id/ballCountTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="212dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="360dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/ballCountTitle"
                     android:textSize="12pt"
                     app:layout_constraintStart_toStartOf="parent"
@@ -294,8 +295,8 @@
                     android:id="@+id/ballCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/defaultNum"
                     android:textSize="12pt"
                     app:layout_constraintStart_toEndOf="@+id/ballCountTitle"
@@ -305,8 +306,8 @@
                     android:id="@+id/onOff"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
                     android:text="@string/onOffText"
                     android:textSize="10pt"
                     app:layout_constraintStart_toStartOf="@+id/ballCountDivider"
@@ -314,9 +315,9 @@
 
                 <View
                     android:id="@+id/ballCountDivider"
-                    android:layout_width="226dp"
+                    android:layout_width="470dp"
                     android:layout_height="2dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="28dp"
                     android:background="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/onOff" />

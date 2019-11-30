@@ -16,9 +16,4 @@
         android:icon="@drawable/ic_statistics_24dp"
         android:title="Statistics" />
 
-    <item
-        android:id="@+id/nav_socialMedia"
-        android:icon="@drawable/ic_social_media_24dp"
-        android:title="Social" />
-
 </menu>

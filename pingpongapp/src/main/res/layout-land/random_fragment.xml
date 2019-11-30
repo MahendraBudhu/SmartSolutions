@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context="pingpong.app.machine.RandomFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_background"
+                tools:context="pingpong.app.machine.RandomFragment">
+
+                <TextView
+                    android:id="@+id/randomTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/randomText"
+                    android:textSize="14pt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/randomImage"
+                    android:layout_width="219dp"
+                    android:layout_height="203dp"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="96dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/randomTitle"
+                    app:srcCompat="@drawable/random" />
+
+                <TextView
+                    android:id="@+id/randomDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/randomDesc"
+                    android:textSize="10pt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/randomImage" />
+
+                <TextView
+                    android:id="@+id/randTimerText"
+                    android:layout_width="292dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="236dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/timerText"
+                    android:textSize="10pt"
+                    app:layout_constraintStart_toStartOf="@+id/randomDescription"
+                    app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+
+                <TextView
+                    android:id="@+id/randTimerValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="56dp"
+                    android:text="@string/defaultNumTimer"
+                    android:textSize="10pt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.074"
+                    app:layout_constraintStart_toEndOf="@+id/randTimerText"
+                    app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+
+                <SeekBar
+                    android:id="@+id/randTimerControl"
+                    android:layout_width="328dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:max="5"
+                    android:progress="0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/randTimerText" />
+
+                <Switch
+                    android:id="@+id/onOffRandom"
+                    android:layout_width="765dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/onOffText"
+                    android:textSize="10pt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/randTimerControl" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:layout_constraintEnd_toEndOf="@+id/randomDescription"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/onOffRandom" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

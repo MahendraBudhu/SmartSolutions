@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Tennis de table intelligent</string>
+    <string name="app_name">Smart Table Tennis</string>
     <string name="prompt_email">E-mail:</string>
     <string name="prompt_password">Mot de passe:</string>
     <string name="action_log_in">S\'identifier</string>
-    <string name="action_register"> S\'inscrire</string>
-    <string name="noUserToast"> Merci d\'entrer un nom d\'utilisateur! </string>
-    <string name="noPassToast"> Veuillez entrer un mot de passe! </string>
-    <string name="noBothToast">S\'il vous plaît entrer un nom d\'utilisateur et mot de passe!</string>
+    <string name="action_register">Registre</string>
+    <string name="noUserToast">Merci d\'entrer un nom d\'utilisateur!</string>
+    <string name="noPassToast">Please enter a password!</string>
+    <string name="noBothToast">Veuillez entrer un mot de passe!</string>
     <string name="wipToast">Fonctionnalité encore à mettre en œuvre, désolé pour le désagrément!</string>
 
     <string name="statsBtn">Statistiques</string>
@@ -15,7 +15,7 @@
 
     <string name="setupText">Configuration de la balle</string>
     <string name="speedTitle">Vitesse (km / h) =</string>
-    <string name="angleHorizontalTitle">Angle (horizontal) =</string>
+    <string name="angleHorizontalTitle">Angle (Horizontal) =</string>
     <string name="angleVerticalTitle">Angle (Vertical) =</string>
     <string name="ballCountTitle">Balles tir:</string>
     <string name="defaultNum">0</string>
@@ -24,27 +24,27 @@
     <string name="speedNumberDefault">0</string>
     <string name="angleNumberDefault">0</string>
     <string name="startButtonToast">Pratique de départ!</string>
-    <string name="stopButtonToast">Arrêter la pratique!</string>
+    <string name="stopButtonToast">Pratique d\'arrêt!</string>
 
     <string name="statsTitle">Statistiques</string>
     <string name="averageSpeed">Vitesse moyenne =</string>
     <string name="minSpeed">Vitesse minimale =</string>
     <string name="maxSpeed">Vitesse maximale =</string>
     <string name="accuracy">Précision =</string>
-    <string name="shotTotal">Nombre total de balles tirées =</string>
+    <string name="shotTotal">Nombre total de balles tirées=</string>
     <string name="shotsHit">Total de coups touchés =</string>
     <string name="shotsMissed">Total de coups manqués =</string>
     <string name="defaultAccuracy">0%</string>
 
-    <string name="daily">du quotidien</string>
-    <string name="monthly">rapport mensuel</string>
-    <string name="yearly">annuel</string>
+    <string name="daily">Quotidien</string>
+    <string name="monthly">Mensuel</string>
+    <string name="yearly">Annuel</string>
     <string name="alltime">Tout le temps</string>
-    <string name="toastDaily">du quotidien</string>
-    <string name="toastMonthly">rapport mensuel</string>
-    <string name="toastYearly">annuel</string>
+    <string name="toastDaily">Quotidien</string>
+    <string name="toastMonthly">Mensuel</string>
+    <string name="toastYearly">Annuel</string>
     <string name="toastAlltime">Tout le temps</string>
-    <string name="selectTime"> Sélectionnez une heure:</string>
+    <string name="selectTime">Sélectionnez une heure: </string>
 
 
     <string name="randomText">Pratique aléatoire</string>
@@ -59,4 +59,27 @@
 
     <string name="timerText">Intervalle de temps (en secondes) =</string>
     <string name="defaultNumTimer">2</string>
+    <string name="title_activity_login">Se connecter</string>
+    <string name="action_sign_in">Connexion ou Inscription</string>
+    <string name="action_sign_in_short">Se connecter</string>
+    <string name="welcome">Bienvenu!</string>
+    <string name="invalid_username">Nom d\'utilisateur non valide</string>
+    <string name="invalid_password">Le mot de passe doit comporter plus de 5 caractères.</string>
+    <string name="login_failed">Échec de la connexion</string>
+    <string name="loginsucess">Connexion réussie!</string>
+    <string name="loginfailed">Échec de la connexion!</string>
+    <string name="registersuccess">Enregistrez le succès!</string>
+    <string name="registerfailed">L\'enregistrement a échoué!</string>
+    <string name="emailsent">Email de vérification envoyé à</string>
+    <string name="notsent">Échec d\'envoi du courrier électronique de vérification.</string>
+    <string name="signOut">Déconnexion</string>
+    <string name="socialTextTB">Social</string>
+
+    <string name="spin1">Plat</string>
+    <string name="spin2">Topspin</string>
+    <string name="spin3">Backspin</string>
+    <string name="spinText">Types de Spin</string>
+
+    <string name="onOffText">Début/Arrêtez</string>
+
 </resources>

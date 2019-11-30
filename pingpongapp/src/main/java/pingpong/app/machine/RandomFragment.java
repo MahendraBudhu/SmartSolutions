@@ -6,7 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RandomFragment extends Fragment {
 
-    public Button randStart;
-    public Button randStop;
+    public Switch randSwitch;
     public SeekBar randTimeBar;
     public TextView randTimeVal;
     public int  randTimer;
@@ -39,6 +40,7 @@ public class RandomFragment extends Fragment {
     DatabaseReference start = database.getReference("Ball Configuration /Start");
     DatabaseReference stop = database.getReference("Ball Configuration /Stop");
     DatabaseReference timer = database.getReference("Ball Configuration /Timer");
+    DatabaseReference spin = database.getReference("Ball Configuration /Spin");
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,57 +53,64 @@ public class RandomFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.random_fragment, container, false);
 
-        randStart = (Button) v.findViewById(R.id.randomStart);
-        randStop = (Button) v.findViewById(R.id.randomStop);
+        randSwitch = (Switch) v.findViewById(R.id.onOffRandom);
         randTimeBar = (SeekBar) v.findViewById(R.id.randTimerControl);
         randTimeVal = (TextView) v.findViewById(R.id.randTimerValue);
 
-        randStart.setOnClickListener(new View.OnClickListener() {
+        randSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
-                Thread t = new Thread() {
-                    public void run() {
-                    try{
-                        start.setValue("True");
-                        stop.setValue("False");
-                        while (true) {
-                            int randval = (int) (Math.random() * 61);
-                            int hangle = (int) (Math.random() * 13) - 6;
-                            int vangle = (int) (Math.random() * 7) - 3;
-                            speed.setValue(randval);
-                            horizontalAngle.setValue(hangle);
-                            verticalAngle.setValue(vangle);
-                            if(randTimer < 2){
-                                randTimer = 2;
-                            }
-                            TimeUnit.SECONDS.sleep(randTimer);
-                            if (rstop == "false") {
-                                start.setValue("False");
-                                stop.setValue("True");
-                                rstop = "";
-                                break;
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
+                    Thread t = new Thread() {
+                        public void run() {
+                            try{
+                                start.setValue("True");
+                                stop.setValue("False");
+                                while (true) {
+                                    int randval = (int) (Math.random() * 61);
+                                    int hangle = (int) (Math.random() * 13) - 6;
+                                    int vangle = (int) (Math.random() * 7) - 3;
+                                    int spinChoice = (int) (Math.random() * 101);
+                                    if(spinChoice < 34){
+                                        spin.setValue("Flat");
+                                    }
+                                    else if(spinChoice >= 34 && spinChoice < 67){
+                                        spin.setValue("Topspin");
+                                    }
+                                    else if(spinChoice >= 67){
+                                        spin.setValue("Backspin");
+                                    }
+                                    speed.setValue(randval);
+                                    horizontalAngle.setValue(hangle);
+                                    verticalAngle.setValue(vangle);
+                                    if(randTimer < 2){
+                                        randTimer = 2;
+                                    }
+                                    TimeUnit.SECONDS.sleep(randTimer);
+                                    if (rstop == "false") {
+                                        start.setValue("False");
+                                        stop.setValue("True");
+                                        rstop = "";
+                                        break;
+                                    }
+                                }
+                            } catch(
+                                    InterruptedException e)
+
+                            {
+                                //Error check
                             }
                         }
-                    } catch(
-                    InterruptedException e)
-
-                    {
-                        //Error check
-                    }
-                    }
-                };
-                t.start();
-            }
-        });
-
-        randStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
-                stop.setValue("True");
-                start.setValue("False");
-                rstop = "false";
+                    };
+                    t.start();
+                }
+                else{
+                    Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
+                    stop.setValue("True");
+                    start.setValue("False");
+                    rstop = "false";
+                }
             }
         });
 

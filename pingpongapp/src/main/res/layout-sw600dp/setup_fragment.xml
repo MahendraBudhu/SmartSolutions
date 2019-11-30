@@ -68,7 +68,7 @@
                     android:max="60"
                     android:progress="0"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintHorizontal_bias="0.514"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,12 +111,12 @@
                     android:layout_width="328dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="40dp"
-                    android:layout_marginTop="260dp"
+                    android:layout_marginTop="252dp"
                     android:layout_marginEnd="40dp"
                     android:max="12"
                     android:progress="6"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintHorizontal_bias="0.514"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,12 +160,11 @@
                     android:layout_width="328dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="40dp"
-                    android:layout_marginTop="388dp"
+                    android:layout_marginTop="376dp"
                     android:layout_marginEnd="40dp"
                     android:max="6"
                     android:progress="3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -188,7 +187,6 @@
                     android:max="5"
                     android:progress="0"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/timerText" />
 
@@ -196,7 +194,7 @@
                     android:id="@+id/timerText"
                     android:layout_width="309dp"
                     android:layout_height="43dp"
-                    android:layout_marginStart="56dp"
+                    android:layout_marginStart="340dp"
                     android:layout_marginTop="52dp"
                     android:text="@string/timerText"
                     android:textSize="10pt"
@@ -212,7 +210,7 @@
                     android:text="@string/defaultNumTimer"
                     android:textSize="10pt"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.739"
+                    app:layout_constraintHorizontal_bias="0.086"
                     app:layout_constraintStart_toEndOf="@+id/timerText"
                     app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
 
@@ -283,8 +281,8 @@
                     android:id="@+id/ballCountTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="212dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="636dp"
+                    android:layout_marginTop="68dp"
                     android:text="@string/ballCountTitle"
                     android:textSize="12pt"
                     app:layout_constraintStart_toStartOf="parent"
@@ -294,8 +292,8 @@
                     android:id="@+id/ballCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="68dp"
                     android:text="@string/defaultNum"
                     android:textSize="12pt"
                     app:layout_constraintStart_toEndOf="@+id/ballCountTitle"
@@ -305,8 +303,8 @@
                     android:id="@+id/onOff"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="188dp"
+                    android:layout_marginTop="104dp"
                     android:text="@string/onOffText"
                     android:textSize="10pt"
                     app:layout_constraintStart_toStartOf="@+id/ballCountDivider"
@@ -314,9 +312,9 @@
 
                 <View
                     android:id="@+id/ballCountDivider"
-                    android:layout_width="226dp"
+                    android:layout_width="605dp"
                     android:layout_height="2dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="50dp"
                     android:background="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/onOff" />

@@ -1,17 +1,18 @@
 package pingpong.app.machine;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-
 import com.example.machine.R;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -26,6 +27,27 @@ public class MainScreen extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetupFragment()).commit();
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar_options, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = null;
+        switch(item.getItemId()){
+            case R.id.socialTB: intent = new Intent(this, SocialScreen.class);
+                                startActivity(intent);
+            break;
+            case R.id.signOut:  FirebaseAuth.getInstance().signOut();
+                                intent = new Intent(this, LoginScreen.class);
+                                startActivity(intent);
+                                finish();
+            break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navigationListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -37,8 +59,6 @@ public class MainScreen extends AppCompatActivity {
                         case R.id.nav_randomConfig:  selectedFrag = new RandomFragment();
                         break;
                         case R.id.nav_statistics:  selectedFrag = new StatisticsFragment();
-                        break;
-                        case R.id.nav_socialMedia:  selectedFrag = new SocialFragment();
                         break;
                     }
 

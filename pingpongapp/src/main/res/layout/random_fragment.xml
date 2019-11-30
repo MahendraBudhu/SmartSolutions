@@ -51,19 +51,17 @@
         android:layout_width="292dp"
         android:layout_height="42dp"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="24dp"
         android:text="@string/timerText"
         android:textSize="10pt"
-        app:layout_constraintBottom_toTopOf="@+id/randomStart"
         app:layout_constraintStart_toStartOf="@+id/randomDescription"
-        app:layout_constraintTop_toBottomOf="@+id/randomDescription"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
 
     <TextView
         android:id="@+id/randTimerValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="56dp"
         android:text="@string/defaultNumTimer"
         android:textSize="10pt"
@@ -85,24 +83,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randTimerText" />
 
-    <Button
-        android:id="@+id/randomStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="84dp"
-        android:text="@string/randBtnStop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
-
-    <Button
-        android:id="@+id/randomStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="116dp"
-        android:text="@string/randBtnStart"
+    <Switch
+        android:id="@+id/onOffRandom"
+        android:layout_width="376dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/onOffText"
+        android:textSize="10pt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/randTimerControl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
