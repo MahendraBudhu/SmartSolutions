@@ -70,7 +70,7 @@
     <string name="loginfailed">Login Failed!</string>
     <string name="registersuccess">Register Success!</string>
     <string name="registerfailed">Register Failed!</string>
-    <string name="emailsent">Verification email sent to</string>
+    <string name="emailsent">Verification email sent to </string>
     <string name="notsent">Failed to send verification email.</string>
     <string name="signOut">Sign out</string>
     <string name="socialTextTB">Social</string>
@@ -88,6 +88,9 @@
     <string name="forgot">Forgot your password?</string>
     <string name="forgotpass">Please Check Email</string>
     <string name="enterUserToReset">Please Enter Email to Reset Password</string>
+    <string name="fullname">Full Name:</string>
+    <string name="reenter">Re-Enter Password</string>
+    <string name="dontmatch">Passwords Do Not Match!</string>
 
     <string name="time1">Slow</string>
     <string name="time2">Medium</string>

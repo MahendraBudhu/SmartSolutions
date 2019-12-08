@@ -16,7 +16,7 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastName" />
+        app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
     <EditText
         android:id="@+id/password"
@@ -33,46 +33,57 @@
         android:id="@+id/signBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="150dp"
         android:onClick="signUp"
         android:text="@string/createaccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/retype" />
 
     <EditText
-        android:id="@+id/firstName"
+        android:id="@+id/fullname"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="@string/firstname"
+        android:hint="@string/fullname"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/lastName"
+        android:id="@+id/retype"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/lastname"
-        android:inputType="textPersonName"
+        android:hint="@string/reenter"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstName" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="210dp"
         android:layout_height="220dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/username"></ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
