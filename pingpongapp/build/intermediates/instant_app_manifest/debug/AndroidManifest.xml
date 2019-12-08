@@ -9,6 +9,7 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,6 +22,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="pingpong.app.machine.RegisterScreen" />
+        <activity
+            android:name="pingpong.app.machine.SocialScreen"
+            android:parentActivityName="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.LoginScreen" >
             <intent-filter>
@@ -59,6 +64,12 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="pingpong.app.machine.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

@@ -63,7 +63,7 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">Welcome!</string>
-    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_username">Not a valid Email</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">Login failed</string>
     <string name="loginsucess">Login Successful!</string>
@@ -81,5 +81,11 @@
     <string name="spinText">Spin Types</string>
 
     <string name="onOffText">Start/Stop</string>
+    <string name="createaccount">Create Account</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="forgot">Forgot your password?</string>
+    <string name="forgotpass">Check Your Email to Reset Password</string>
+    <string name="enterUserToReset">Please Enter Email to Reset Password</string>
 
 </resources>

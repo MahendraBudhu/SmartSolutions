@@ -25,8 +25,12 @@ public class RegisterScreen extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     TextView userField;
     TextView passField;
+    TextView firstN;
+    TextView lastN;
     String passWord;
     String userName;
+    String firstName;
+    String lastName;
     private FirebaseAuth mAuth;
 
     @Override
@@ -40,8 +44,13 @@ public class RegisterScreen extends AppCompatActivity {
     public void signUp(View view) {
         userField = findViewById(R.id.username);
         passField = findViewById(R.id.password);
+        firstN = findViewById(R.id.firstName);
+        lastN = findViewById(R.id.lastName);
+        userField = findViewById(R.id.username);
         userName = userField.getText().toString();
         passWord = passField.getText().toString();
+        firstName = firstN.getText().toString();
+        lastName = lastN.getText().toString();
         //register user
         mAuth.createUserWithEmailAndPassword(userName, passWord)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -70,6 +79,10 @@ public class RegisterScreen extends AppCompatActivity {
                             ;
                             String totalMissedUser = "Users/" + user.getUid() + "/Total Balls Missed: ";
                             ;
+                            String firstNamePath = "Users/" + user.getUid() + "/First Name ";
+                            ;
+                            String lastNamePath = "Users/" + user.getUid() + "/Last Name ";
+                            ;
 
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -82,9 +95,12 @@ public class RegisterScreen extends AppCompatActivity {
                             DatabaseReference totalShotsVal = database.getReference(totalShotsUser);
                             DatabaseReference totalHitVal = database.getReference(totalHitUser);
                             DatabaseReference totalMissedVal = database.getReference(totalMissedUser);
-
+                            DatabaseReference firstname = database.getReference(firstNamePath);
+                            DatabaseReference lastname = database.getReference(lastNamePath);
 
                             emailVal.setValue(userName);
+                            firstname.setValue(firstName);
+                            lastname.setValue(lastName);
                             avgSpeedVal.setValue("0");
                             minSpeedVal.setValue("0");
                             maxSpeedVal.setValue("0");
