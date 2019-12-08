@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
     tools:context="pingpong.app.machine.StatisticsFragment">
 
     <ScrollView
@@ -19,7 +18,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient_background"
                 tools:context="pingpong.app.machine.StatisticsFragment">
 
                 <ScrollView
@@ -254,7 +252,7 @@
                 android:layout_marginTop="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ballm"
+                app:layout_constraintTop_toBottomOf="@+id/ballMissVal"
                 app:layout_constraintVertical_bias="0.0" />
         </LinearLayout>
     </ScrollView>
