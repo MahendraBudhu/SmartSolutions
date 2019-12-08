@@ -1,3 +1,4 @@
+//Smart Solutions
 package pingpong.app.machine;
 
 import android.content.Intent;
@@ -21,12 +22,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class RegisterScreen extends AppCompatActivity {
-    private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
     TextView userField;
     TextView passField;
     String passWord;
     String userName;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,8 @@ public class RegisterScreen extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        userField =  findViewById(R.id.username);
-        passField =  findViewById(R.id.password);
+        userField = findViewById(R.id.username);
+        passField = findViewById(R.id.password);
         userName = userField.getText().toString();
         passWord = passField.getText().toString();
         //register user
@@ -54,13 +56,20 @@ public class RegisterScreen extends AppCompatActivity {
 
                             //Setting default parameters for when user registers in the database
                             String emailEntry = "Users/" + user.getUid() + "/Email: ";
-                            String avgSpeedUser = "Users/" + user.getUid() + "/Average Speed: ";;
-                            String minSpeedUser = "Users/" + user.getUid() + "/Minimum Speed: ";;
-                            String maxSpeedUser = "Users/" + user.getUid() + "/Maximum Speed ";;
-                            String accuracyUser = "Users/" + user.getUid() + "/Accuracy ";;
-                            String totalShotsUser = "Users/" + user.getUid() + "/Total Shots Fired: ";;
-                            String totalHitUser = "Users/" + user.getUid() + "/Total Balls Hit: ";;
-                            String totalMissedUser = "Users/" + user.getUid() + "/Total Balls Missed: ";;
+                            String avgSpeedUser = "Users/" + user.getUid() + "/Average Speed: ";
+                            ;
+                            String minSpeedUser = "Users/" + user.getUid() + "/Minimum Speed: ";
+                            ;
+                            String maxSpeedUser = "Users/" + user.getUid() + "/Maximum Speed ";
+                            ;
+                            String accuracyUser = "Users/" + user.getUid() + "/Accuracy ";
+                            ;
+                            String totalShotsUser = "Users/" + user.getUid() + "/Total Shots Fired: ";
+                            ;
+                            String totalHitUser = "Users/" + user.getUid() + "/Total Balls Hit: ";
+                            ;
+                            String totalMissedUser = "Users/" + user.getUid() + "/Total Balls Missed: ";
+                            ;
 
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -95,6 +104,7 @@ public class RegisterScreen extends AppCompatActivity {
                     }
                 });
     }
+
     private void sendEmailVerification() {
         final FirebaseUser user = mAuth.getCurrentUser();
         user.sendEmailVerification()
@@ -105,7 +115,7 @@ public class RegisterScreen extends AppCompatActivity {
                         // Re-enable button
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(RegisterScreen.this, getString(R.string.emailsent)  + user.getEmail(),
+                            Toast.makeText(RegisterScreen.this, getString(R.string.emailsent) + user.getEmail(),
                                     Toast.LENGTH_LONG).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
