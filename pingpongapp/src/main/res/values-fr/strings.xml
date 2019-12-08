@@ -14,9 +14,9 @@
     <string name="randomBtn">Pratique aléatoire</string>
 
     <string name="setupText">Configuration de la balle</string>
-    <string name="speedTitle">Vitesse (km / h) =</string>
-    <string name="angleHorizontalTitle">Angle (Horizontal) =</string>
-    <string name="angleVerticalTitle">Angle (Vertical) =</string>
+    <string name="speedTitle">Vitesse</string>
+    <string name="angleHorizontalTitle">Angle (Horizontal)</string>
+    <string name="angleVerticalTitle">Angle (Vertical)</string>
     <string name="ballCountTitle">Balles tir:</string>
     <string name="defaultNum">0</string>
     <string name="startButton">Début!</string>
@@ -57,7 +57,7 @@
     <string name="socialText">Social</string>
     <string name="futurePlans">Les utilisateurs pourront partager leurs statistiques sur les réseaux sociaux (Facebook, Twitter, etc.)</string>
 
-    <string name="timerText">Intervalle de temps (en secondes) =</string>
+    <string name="timerText">Intervalle de temps</string>
     <string name="defaultNumTimer">2</string>
     <string name="title_activity_login">Se connecter</string>
     <string name="action_sign_in">Connexion ou Inscription</string>
@@ -81,5 +81,28 @@
     <string name="spinText">Types de Spin</string>
 
     <string name="onOffText">Début/Arrêtez</string>
+
+    <string name="createaccount">Créer un compte</string>
+    <string name="firstname">Prénom</string>
+    <string name="lastname">Nom de famille</string>
+    <string name="forgot">Mot de passe oublié?</string>
+    <string name="forgotpass">Veuillez vérifier l\'e-mail</string>
+    <string name="enterUserToReset">Veuillez saisir un e-mail pour réinitialiser le mot de passe</string>
+
+    <string name="time1">Lent</string>
+    <string name="time2">Moyen</string>
+    <string name="time3">Vite</string>
+
+    <string name="vert1">Low</string>
+    <string name="vert2">Moyen</string>
+    <string name="vert3">Haut</string>
+
+    <string name="horz1">Gauche</string>
+    <string name="horz2">Centre</string>
+    <string name="horz3">Droit</string>
+
+    <string name="speed1">Lent</string>
+    <string name="speed2">Moyen</string>
+    <string name="speed3">Vite</string>
 
 </resources>

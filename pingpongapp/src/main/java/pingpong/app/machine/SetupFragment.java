@@ -26,17 +26,17 @@ import com.example.machine.R;
 
 public class SetupFragment extends Fragment {
 
-    public SeekBar speedBar;
-    public SeekBar angleHorizontalBar;
-    public SeekBar angleVerticalBar;
-    public SeekBar timeBar;
+    public RadioGroup speedTypes;
+    public RadioGroup angleHorizontalTypes;
+    public RadioGroup angleVerticalTypes;
+    public RadioGroup timeTypes;
+    public RadioGroup spinTypes;
 
     public TextView speedVal;
     public TextView angleHorizontalVal;
     public TextView angleVerticalVal;
     public TextView timeVal;
 
-    public RadioGroup spinTypes;
 
     public Switch onOff;
 
@@ -63,70 +63,61 @@ public class SetupFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.setup_fragment, container, false);
-        speedBar = (SeekBar) v.findViewById(R.id.speedControl);
-        speedVal = (TextView) v.findViewById(R.id.speedNum);
-
-        angleHorizontalBar = (SeekBar) v.findViewById(R.id.angleHorizontalControl);
-        angleHorizontalVal = (TextView) v.findViewById(R.id.angleHorizontalNum);
-
-        angleVerticalBar = (SeekBar) v.findViewById(R.id.angleVerticalControl);
-        angleVerticalVal = (TextView) v.findViewById(R.id.angleVerticalNum);
-
-        timeBar = (SeekBar) v.findViewById(R.id.timerControl);
-        timeVal = (TextView) v.findViewById(R.id.timerVal);
-
+        speedTypes = (RadioGroup) v.findViewById(R.id.speedChoices);
+        angleHorizontalTypes = (RadioGroup) v.findViewById(R.id.horzChoices);
+        angleVerticalTypes = (RadioGroup) v.findViewById(R.id.vertChoices);
+        timeTypes = (RadioGroup) v.findViewById(R.id.timeChoices);
         spinTypes = (RadioGroup) v.findViewById(R.id.spinChoices);
 
         //Setting up default DB Values
         start.setValue("False");
         stop.setValue("True");
-        speed.setValue("0");
-        horizontalAngle.setValue("0");
-        verticalAngle.setValue("0");
+        speed.setValue("Slow");
+        horizontalAngle.setValue("Left");
+        verticalAngle.setValue("Low");
         spin.setValue("Flat");
+        timer.setValue("Slow");
 
         onOff = (Switch) v.findViewById(R.id.onOff);
 
-        sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
+
+        speedTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Speed data for database
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                switch(seekBar.getId()){
-                    case R.id.speedControl: speedVal.setText("" + progress + "");
-                        speed.setValue(progress);
-                        break;
-                    case R.id.angleHorizontalControl: progress-=6;
-                        angleHorizontalVal.setText("" + progress + "");
-                        horizontalAngle.setValue(progress);
-                        break;
-                    case R.id.angleVerticalControl: progress-=3;
-                        angleVerticalVal.setText("" + progress + "");
-                        verticalAngle.setValue(progress);
-                        break;
-                    case R.id.timerControl: progress = progress + 2;
-                        timeVal.setText("" + progress + "");
-                        timer.setValue(progress);
-                        break;
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String speedRequest = chosenOption.getText().toString();
+                speed.setValue(speedRequest);
+            }
+        });
 
-    }
-}
+        angleHorizontalTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Horizontal Angle data for database
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String horzRequest = chosenOption.getText().toString();
+                horizontalAngle.setValue(horzRequest);
+            }
+        });
 
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
+        angleVerticalTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Vertical Angle data for database
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String vertRequest = chosenOption.getText().toString();
+                verticalAngle.setValue(vertRequest);
+            }
+        });
 
-    }
+        timeTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Time data for database
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String timeRequest = chosenOption.getText().toString();
+                timer.setValue(timeRequest);
+            }
+        });
 
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
-};
-
-        speedBar.setOnSeekBarChangeListener(sbListener);
-        angleHorizontalBar.setOnSeekBarChangeListener(sbListener);
-        angleVerticalBar.setOnSeekBarChangeListener(sbListener);
-        timeBar.setOnSeekBarChangeListener(sbListener);
-
-        spinTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        spinTypes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);

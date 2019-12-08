@@ -14,9 +14,9 @@
     <string name="randomBtn">Random Practice</string>
 
     <string name="setupText">Ball Configuration</string>
-    <string name="speedTitle">Speed (km/h) =</string>
-    <string name="angleHorizontalTitle">Angle (Horizontal) =</string>
-    <string name="angleVerticalTitle">Angle (Vertical) =</string>
+    <string name="speedTitle">Speed</string>
+    <string name="angleHorizontalTitle">Angle (Horizontal)</string>
+    <string name="angleVerticalTitle">Angle (Vertical)</string>
     <string name="ballCountTitle">Balls shot:</string>
     <string name="defaultNum">0</string>
     <string name="startButton">Start!</string>
@@ -57,7 +57,7 @@
     <string name="socialText">Social</string>
     <string name="futurePlans">Users will be able to share their statistics on social medias (Facebook, Twitter, etc.)</string>
 
-    <string name="timerText">Time Interval (in seconds) =</string>
+    <string name="timerText">Time Interval</string>
     <string name="defaultNumTimer">2</string>
     <string name="title_activity_login">Sign in</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -81,11 +81,28 @@
     <string name="spinText">Spin Types</string>
 
     <string name="onOffText">Start/Stop</string>
+
     <string name="createaccount">Create Account</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="forgot">Forgot your password?</string>
     <string name="forgotpass">Please Check Email</string>
     <string name="enterUserToReset">Please Enter Email to Reset Password</string>
+
+    <string name="time1">Slow</string>
+    <string name="time2">Medium</string>
+    <string name="time3">Fast</string>
+
+    <string name="vert1">Low</string>
+    <string name="vert2">Medium</string>
+    <string name="vert3">High</string>
+
+    <string name="horz1">Left</string>
+    <string name="horz2">Center</string>
+    <string name="horz3">Right</string>
+
+    <string name="speed1">Slow</string>
+    <string name="speed2">Medium</string>
+    <string name="speed3">Fast</string>
 
 </resources>
