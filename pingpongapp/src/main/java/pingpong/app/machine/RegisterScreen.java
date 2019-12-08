@@ -108,7 +108,7 @@ public class RegisterScreen extends AppCompatActivity {
                             totalShotsVal.setValue("0");
                             totalHitVal.setValue("0");
                             totalMissedVal.setValue("0");
-
+//delete
                             //Sending user back to login screen
                             Intent intent = new Intent(RegisterScreen.this, LoginScreen.class);
                             startActivity(intent);

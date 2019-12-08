@@ -85,7 +85,7 @@
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="forgot">Forgot your password?</string>
-    <string name="forgotpass">Check Your Email to Reset Password</string>
+    <string name="forgotpass">Please Check Email</string>
     <string name="enterUserToReset">Please Enter Email to Reset Password</string>
 
 </resources>

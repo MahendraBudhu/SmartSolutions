@@ -121,7 +121,7 @@ public class LoginScreen extends AppCompatActivity {
 
 
     public void forgotPass(View view) {
-
+//delete
         FirebaseAuth auth = FirebaseAuth.getInstance();
         TextView userField = findViewById(R.id.username);
         String username = userField.getText().toString();
