@@ -2,16 +2,13 @@ package pingpong.app.machine;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,13 +16,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.machine.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
 public class RandomFragment extends Fragment {
-
+    FirebaseAuth mAuth;
     public Switch randSwitch;
     public RadioGroup randTimeOptions;
     public String  rstop;
@@ -36,17 +35,11 @@ public class RandomFragment extends Fragment {
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-    DatabaseReference BallConfig = database.getReference("Ball Configuration");
-    DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
-    DatabaseReference horizontalAngle = database.getReference("Ball Configuration /Horizontal Angle");
-    DatabaseReference verticalAngle = database.getReference("Ball Configuration /Vertical Angle");
-    DatabaseReference start = database.getReference("Ball Configuration /Start");
-    DatabaseReference stop = database.getReference("Ball Configuration /Stop");
-    DatabaseReference timer = database.getReference("Ball Configuration /Timer");
-    DatabaseReference spin = database.getReference("Ball Configuration /Spin");
+
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -55,14 +48,23 @@ public class RandomFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.random_fragment, container, false);
+        FirebaseUser user = mAuth.getCurrentUser();
+        DatabaseReference BallConfig = database.getReference("Users/" + user.getUid() + "/Ball Configuration");
+        final DatabaseReference speed = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Ball Speed");
+        final DatabaseReference horizontalAngle = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Horizontal Angle");
+        final DatabaseReference verticalAngle = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Vertical Angle");
+        final DatabaseReference start = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Start");
+        final DatabaseReference stop = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Stop");
+        DatabaseReference timer = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Timer");
+        final DatabaseReference spin = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Spin");
 
-        randSwitch = (Switch) v.findViewById(R.id.onOffRandom);
-        randTimeOptions = (RadioGroup) v.findViewById(R.id.randTimeChoices);
+        randSwitch = v.findViewById(R.id.onOffRandom);
+        randTimeOptions = v.findViewById(R.id.randTimeChoices);
 
         randTimeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                RadioButton chosenOption = group.findViewById(checkedId);
                 String randTimeRequest = chosenOption.getText().toString();
                 if(randTimeRequest.equalsIgnoreCase("Slow")) {
                     timeVal = 6;

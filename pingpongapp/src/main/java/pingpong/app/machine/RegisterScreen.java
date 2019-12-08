@@ -32,8 +32,9 @@ public class RegisterScreen extends AppCompatActivity {
     String userName;
     String fullName;
     String retype;
-    private FirebaseAuth mAuth;
     ProgressBar pgsBar;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +55,10 @@ public class RegisterScreen extends AppCompatActivity {
         retype = reType.getText().toString();
         pgsBar = findViewById(R.id.pBar);
 
-        if(!passWord.equals(retype)){
+        if (!passWord.equals(retype)) {
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.dontmatch), Toast.LENGTH_LONG).show();
-        }
-        else {
-            pgsBar.setVisibility(view.VISIBLE);
+        } else {
+            pgsBar.setVisibility(View.VISIBLE);
             //register user
             mAuth.createUserWithEmailAndPassword(userName, passWord)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -74,19 +74,12 @@ public class RegisterScreen extends AppCompatActivity {
                                 //Setting default parameters for when user registers in the database
                                 String emailEntry = "Users/" + user.getUid() + "/Email: ";
                                 String avgSpeedUser = "Users/" + user.getUid() + "/Average Speed: ";
-                                ;
                                 String minSpeedUser = "Users/" + user.getUid() + "/Minimum Speed: ";
-                                ;
                                 String maxSpeedUser = "Users/" + user.getUid() + "/Maximum Speed ";
-                                ;
                                 String accuracyUser = "Users/" + user.getUid() + "/Accuracy ";
-                                ;
                                 String totalShotsUser = "Users/" + user.getUid() + "/Total Shots Fired: ";
-                                ;
                                 String totalHitUser = "Users/" + user.getUid() + "/Total Balls Hit: ";
-                                ;
                                 String totalMissedUser = "Users/" + user.getUid() + "/Total Balls Missed: ";
-                                ;
                                 String fullNamePath = "Users/" + user.getUid() + "/Full Name ";
 
 
@@ -113,7 +106,7 @@ public class RegisterScreen extends AppCompatActivity {
                                 totalMissedVal.setValue("0");
                                 //Sending user back to login screen
                                 Intent intent = new Intent(RegisterScreen.this, LoginScreen.class);
-                                pgsBar.setVisibility(view.GONE);
+                                pgsBar.setVisibility(View.GONE);
                                 startActivity(intent);
                             } else {
                                 // If sign in fails, display a message to the user.
