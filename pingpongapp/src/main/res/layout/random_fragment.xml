@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context="pingpong.app.machine.RandomFragment">
 
     <TextView
@@ -32,65 +33,59 @@
         app:srcCompat="@drawable/random" />
 
     <TextView
-        android:id="@+id/randomDescription"
+        android:id="@+id/randTimerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:text="@string/randomDesc"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="61dp"
+        android:text="@string/timerText"
         android:textSize="10pt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomImage" />
 
-    <TextView
-        android:id="@+id/randTimerText"
-        android:layout_width="292dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/timerText"
-        android:textSize="10pt"
-        app:layout_constraintStart_toStartOf="@+id/randomDescription"
-        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
-
-    <TextView
-        android:id="@+id/randTimerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/defaultNumTimer"
-        android:textSize="10pt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.289"
-        app:layout_constraintStart_toEndOf="@+id/randTimerText"
-        app:layout_constraintTop_toBottomOf="@+id/randomDescription" />
-
-    <SeekBar
-        android:id="@+id/randTimerControl"
-        android:layout_width="328dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:max="5"
-        android:progress="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+    <RadioGroup
+        android:id="@+id/randTimeChoices"
+        android:layout_width="390dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randTimerText" />
+        app:layout_constraintTop_toBottomOf="@+id/randTimerText">
+
+        <RadioButton
+            android:id="@+id/randTimeType1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/time1" />
+
+        <RadioButton
+            android:id="@+id/randTimeType2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/time2" />
+
+        <RadioButton
+            android:id="@+id/randTimeType3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/time3" />
+
+    </RadioGroup>
 
     <Switch
         android:id="@+id/onOffRandom"
         android:layout_width="376dp"
         android:layout_height="47dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:text="@string/onOffText"
         android:textSize="10pt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randTimerControl" />
+        app:layout_constraintTop_toBottomOf="@+id/randTimeChoices" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

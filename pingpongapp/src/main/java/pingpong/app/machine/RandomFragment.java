@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -25,14 +27,15 @@ import java.util.concurrent.TimeUnit;
 public class RandomFragment extends Fragment {
 
     public Switch randSwitch;
-    public SeekBar randTimeBar;
-    public TextView randTimeVal;
-    public int  randTimer;
+    public RadioGroup randTimeOptions;
     public String  rstop;
+
+    int timeVal = 0;
 
     SeekBar.OnSeekBarChangeListener sbListener;
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     DatabaseReference BallConfig = database.getReference("Ball Configuration");
     DatabaseReference speed= database.getReference("Ball Configuration /Ball Speed");
     DatabaseReference horizontalAngle = database.getReference("Ball Configuration /Horizontal Angle");
@@ -54,8 +57,24 @@ public class RandomFragment extends Fragment {
         View v = inflater.inflate(R.layout.random_fragment, container, false);
 
         randSwitch = (Switch) v.findViewById(R.id.onOffRandom);
-        randTimeBar = (SeekBar) v.findViewById(R.id.randTimerControl);
-        randTimeVal = (TextView) v.findViewById(R.id.randTimerValue);
+        randTimeOptions = (RadioGroup) v.findViewById(R.id.randTimeChoices);
+
+        randTimeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton chosenOption = (RadioButton)group.findViewById(checkedId);
+                String randTimeRequest = chosenOption.getText().toString();
+                if(randTimeRequest.equalsIgnoreCase("Slow")) {
+                    timeVal = 6;
+                }
+                else if(randTimeRequest.equalsIgnoreCase("Medium")) {
+                    timeVal = 4;
+                }
+                else if(randTimeRequest.equalsIgnoreCase("Fast")) {
+                    timeVal = 2;
+                }
+            }
+        });
 
         randSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -68,10 +87,45 @@ public class RandomFragment extends Fragment {
                                 start.setValue("True");
                                 stop.setValue("False");
                                 while (true) {
-                                    int randval = (int) (Math.random() * 61);
-                                    int hangle = (int) (Math.random() * 13) - 6;
-                                    int vangle = (int) (Math.random() * 7) - 3;
+                                    int speedVal = (int) (Math.random() * 101);
+                                    int hangle = (int) (Math.random() * 101);
+                                    int vangle = (int) (Math.random() * 101);
                                     int spinChoice = (int) (Math.random() * 101);
+
+                                    //Random Speed
+                                    if(speedVal < 34){
+                                        speed.setValue("Slow");
+                                    }
+                                    else if(speedVal >= 34 && speedVal < 67){
+                                        speed.setValue("Medium");
+                                    }
+                                    else if(speedVal >= 67){
+                                        speed.setValue("Fast");
+                                    }
+
+                                    //Random Horizontal Angle
+                                    if(hangle < 34){
+                                        horizontalAngle.setValue("Left");
+                                    }
+                                    else if(hangle >= 34 && hangle < 67){
+                                        horizontalAngle.setValue("Center");
+                                    }
+                                    else if(hangle >= 67){
+                                        horizontalAngle.setValue("Right");
+                                    }
+
+                                    //Random Vertical Angle
+                                    if(vangle < 34){
+                                        verticalAngle.setValue("Low");
+                                    }
+                                    else if(vangle >= 34 && vangle < 67){
+                                        verticalAngle.setValue("Medium");
+                                    }
+                                    else if(vangle >= 67){
+                                        verticalAngle.setValue("High");
+                                    }
+
+                                    //Random Spin
                                     if(spinChoice < 34){
                                         spin.setValue("Flat");
                                     }
@@ -81,13 +135,8 @@ public class RandomFragment extends Fragment {
                                     else if(spinChoice >= 67){
                                         spin.setValue("Backspin");
                                     }
-                                    speed.setValue(randval);
-                                    horizontalAngle.setValue(hangle);
-                                    verticalAngle.setValue(vangle);
-                                    if(randTimer < 2){
-                                        randTimer = 2;
-                                    }
-                                    TimeUnit.SECONDS.sleep(randTimer);
+
+                                    TimeUnit.SECONDS.sleep(timeVal);
                                     if (rstop == "false") {
                                         start.setValue("False");
                                         stop.setValue("True");
@@ -113,31 +162,6 @@ public class RandomFragment extends Fragment {
                 }
             }
         });
-
-        sbListener = new SeekBar.OnSeekBarChangeListener(){ //sbListener is used to determine which SeekBar is being changed.
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                switch(seekBar.getId()){
-                    case R.id.randTimerControl: progress = progress + 2;
-                        randTimeVal.setText("" + progress + "");
-                        timer.setValue(progress);
-                        randTimer = progress;
-                        break;
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        };
-
-        randTimeBar.setOnSeekBarChangeListener(sbListener);
 
         return v;
     }

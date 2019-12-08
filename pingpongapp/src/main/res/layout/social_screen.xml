@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context="pingpong.app.machine.SocialScreen">
 
@@ -18,8 +19,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-              >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/socialTitle"
