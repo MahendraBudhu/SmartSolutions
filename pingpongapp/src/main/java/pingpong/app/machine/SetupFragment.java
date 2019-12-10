@@ -67,7 +67,7 @@ public class SetupFragment extends Fragment {
         verticalAngle.setValue("Low");
         spin.setValue("Flat");
         timer.setValue("Slow");
-
+//
         onOff = v.findViewById(R.id.onOff);
         final View fadeBackground = v.findViewById(R.id.fadeBackground);
 

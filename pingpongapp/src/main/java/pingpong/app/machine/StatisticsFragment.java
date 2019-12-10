@@ -1,4 +1,4 @@
-//Smart Solutions
+//Smart Solutionss
 package pingpong.app.machine;
 
 import android.os.Bundle;
