@@ -1,8 +1,10 @@
 package pingpong.app.machine;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,12 +31,22 @@ public class LoginScreen extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     private int STORAGE_PERMISSION_CODE = 1;
     ProgressBar pgsBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         mAuth = FirebaseAuth.getInstance();
+        TextView userField = findViewById(R.id.username);
+        TextView passField = findViewById(R.id.password);
+        String username = userField.getText().toString();
+        String password = passField.getText().toString();
+        SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        if(pref.contains("Email") && pref.contains("Password")){
+            userField.setText(pref.getString("Email",""));
+            passField.setText(pref.getString("Password",""));
+            login(null);
+        }
     }
 
     //Validating Login Infos
@@ -143,6 +155,15 @@ public class LoginScreen extends AppCompatActivity {
         }
     }
 
-
-
+    public void save(View view) {
+        TextView userField = findViewById(R.id.username);
+        String username = userField.getText().toString();
+        TextView passField = findViewById(R.id.password);
+        String password = passField.getText().toString();
+        SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("Email", username);
+        editor.putString("Password", password);
+        editor.commit();
+    }
 }

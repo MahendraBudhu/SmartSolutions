@@ -35,8 +35,8 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_gravity="start"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
         android:onClick="login"
         android:text="@string/action_log_in"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,8 +47,8 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_gravity="start"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="64dp"
         android:onClick="register"
         android:text="@string/action_register"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,9 @@
         android:id="@+id/imageView2"
         android:layout_width="210dp"
         android:layout_height="220dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -87,5 +89,16 @@
     app:layout_constraintStart_toStartOf="parent"
     android:visibility="gone"
     app:layout_constraintTop_toBottomOf="@+id/username"></ProgressBar>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:onClick="save"
+        android:text="@string/rememberMe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

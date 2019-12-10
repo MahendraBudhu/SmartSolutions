@@ -1,5 +1,6 @@
 package pingpong.app.machine;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
