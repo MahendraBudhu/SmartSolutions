@@ -116,5 +116,9 @@
     <string name="githublink">Here is our github link if you would like to explore our projects!</string>
     <string name="contactdescription">Feel free to contact us through our Twitter or Email!</string>
     <string name="userProfileTB">User Profile</string>
+    <string name="userprofheader">Your Profile</string>
+    <string name="Yourname">Your Name</string>
+    <string name="youremail">Your Email</string>
+    <string name="changepass">Change Password</string>
 
 </resources>

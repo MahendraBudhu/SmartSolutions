@@ -35,7 +35,10 @@
     <string name="shotsHit">Total de coups touchés =</string>
     <string name="shotsMissed">Total de coups manqués =</string>
     <string name="defaultAccuracy">0%</string>
-    <string name="gamesPlayed">parties jouées</string>
+    <string name="userprofheader">Votre profil</string>
+    <string name="Yourname">votre nom</string>
+    <string name="youremail">Votre email</string>
+    <string name="changepass">Changer le mot de passe</string>
 
     <string name="daily">Quotidien</string>
     <string name="monthly">Mensuel</string>

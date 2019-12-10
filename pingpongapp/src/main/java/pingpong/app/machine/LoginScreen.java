@@ -29,7 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginScreen extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
-    private int STORAGE_PERMISSION_CODE = 1;
+    private static final int PICK_FROM_GALLERY = 1;
     ProgressBar pgsBar;
 
     @Override
@@ -113,7 +113,7 @@ public class LoginScreen extends AppCompatActivity {
 
     private void requestStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Manifest.permission.CAMERA)) {
 
             new AlertDialog.Builder(this)
                     .setTitle("Permission needed")
@@ -121,7 +121,7 @@ public class LoginScreen extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(LoginScreen.this,
-                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PICK_FROM_GALLERY);
                         }
                     })
                     .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -134,7 +134,7 @@ public class LoginScreen extends AppCompatActivity {
 
         } else {
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PICK_FROM_GALLERY);
         }
     }
 
