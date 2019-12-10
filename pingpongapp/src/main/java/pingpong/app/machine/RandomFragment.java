@@ -120,7 +120,7 @@ public class RandomFragment extends Fragment {
                                             int vangle = (int) (Math.random() * 101);
                                             int spinChoice = (int) (Math.random() * 101);
 
-                                            //Random Speed
+                                            //Random Speeds
                                             if(speedVal < 34){
                                                 speed.setValue("Slow");
                                             }

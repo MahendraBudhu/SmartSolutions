@@ -80,7 +80,7 @@ public class MainScreen extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
 
-            //moveTaskToBack(false);
+            //moveTaskToBack(false);;
 
             return true;
         }
