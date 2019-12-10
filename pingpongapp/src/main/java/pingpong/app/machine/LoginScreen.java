@@ -31,6 +31,7 @@ public class LoginScreen extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     private int STORAGE_PERMISSION_CODE = 1;
     ProgressBar pgsBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +43,17 @@ public class LoginScreen extends AppCompatActivity {
         String password = passField.getText().toString();
         SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        if(pref.contains("Email") && pref.contains("Password")){
-            userField.setText(pref.getString("Email",""));
-            passField.setText(pref.getString("Password",""));
-            login(null);
+        if (pref.contains("Email") && pref.contains("Password")) {
+            if(pref.getString("signOut", "") == "true") {
+            }
+            else {
+                userField.setText(pref.getString("Email", ""));
+                passField.setText(pref.getString("Password", ""));
+                editor.putString("signOut", "true");
+                login(null);
+            }
         }
+
     }
 
     //Validating Login Infos

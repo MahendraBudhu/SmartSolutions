@@ -1,8 +1,10 @@
 //Smart Solutions
 package pingpong.app.machine;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -71,6 +73,10 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.signOut:
+                SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("signOut", "true");
+                editor.commit();
                 FirebaseAuth.getInstance().signOut();
                 intent = new Intent(this, LoginScreen.class);
                 startActivity(intent);
