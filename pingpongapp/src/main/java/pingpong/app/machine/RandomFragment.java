@@ -64,6 +64,9 @@ public class RandomFragment extends Fragment {
         onOffRandom = v.findViewById(R.id.onOffRandom);
         randTimeOptions = v.findViewById(R.id.randTimeChoices);
         final TextView pgsBar = v.findViewById(R.id.progressBarinsideText);
+
+        timeVal = 6;
+
         randTimeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
