@@ -67,12 +67,15 @@ public class RandomFragment extends Fragment {
                 String randTimeRequest = chosenOption.getText().toString();
                 if(randTimeRequest.equalsIgnoreCase("Slow")) {
                     timeVal = 6;
+                    timer.setValue("Slow");
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Medium")) {
                     timeVal = 4;
+                    timer.setValue("Medium");
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Fast")) {
                     timeVal = 2;
+                    timer.setValue("Fast");
                 }
             }
         });
