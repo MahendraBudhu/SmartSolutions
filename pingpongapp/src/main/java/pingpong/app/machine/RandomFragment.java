@@ -1,8 +1,10 @@
 package pingpong.app.machine;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +31,18 @@ import java.util.concurrent.TimeUnit;
 
 public class RandomFragment extends Fragment {
     FirebaseAuth mAuth;
+
     public Thread t;
     public Switch onOffRandom;
+
     public RadioGroup randTimeOptions;
+    public RadioButton randTime1;
+    public RadioButton randTime2;
+    public RadioButton randTime3;
+
+
     public String rstop;
+
     public int timeVal;
     int counter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -50,6 +60,10 @@ public class RandomFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.random_fragment, container, false);
 
+        SharedPreferences pref = this.getActivity().getSharedPreferences("MyPref", 0);
+
+        final SharedPreferences.Editor editor = pref.edit();
+
         FirebaseUser user = mAuth.getCurrentUser();
 
         DatabaseReference BallConfig = database.getReference("Users/" + user.getUid() + "/Ball Configuration");
@@ -63,6 +77,12 @@ public class RandomFragment extends Fragment {
 
         onOffRandom = v.findViewById(R.id.onOffRandom);
         randTimeOptions = v.findViewById(R.id.randTimeChoices);
+
+        randTime1 = v.findViewById(R.id.randTimeType1);
+        randTime2 = v.findViewById(R.id.randTimeType2);
+        randTime3 = v.findViewById(R.id.randTimeType3);
+
+
         final TextView pgsBar = v.findViewById(R.id.progressBarinsideText);
 
         timeVal = 6;
@@ -75,17 +95,36 @@ public class RandomFragment extends Fragment {
                 if(randTimeRequest.equalsIgnoreCase("Slow")) {
                     timeVal = 6;
                     timer.setValue("Slow");
+                    editor.putInt("randTimerState", 1);
+                    editor.commit();
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Medium")) {
                     timeVal = 4;
                     timer.setValue("Medium");
+                    editor.putInt("randTimerState", 2);
+                    editor.commit();
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Fast")) {
                     timeVal = 2;
                     timer.setValue("Fast");
+                    editor.putInt("randTimerState", 3);
+                    editor.commit();
                 }
             }
         });
+
+        int lastRandTimerState = pref.getInt("randTimerState", 0);
+
+        if(lastRandTimerState == 1){
+            randTime1.setChecked(true);
+        }
+        else if(lastRandTimerState == 2){
+            randTime2.setChecked(true);
+        }
+        else if(lastRandTimerState == 3){
+            randTime3.setChecked(true);
+        }
+
         final View fadeBackground = v.findViewById(R.id.fadeBackground);
         onOffRandom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
