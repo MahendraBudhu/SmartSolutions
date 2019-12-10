@@ -11,8 +11,8 @@
 9-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:5-80
-11-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:22-77
+11-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:4:5-79
+11-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:4:22-77
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3b1d3136bbafdb337b36b55eaff574e1\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:5-79
 12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3b1d3136bbafdb337b36b55eaff574e1\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:22-76
@@ -21,119 +21,113 @@
 13-->[com.google.firebase:firebase-database:16.0.4] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3b1d3136bbafdb337b36b55eaff574e1\jetified-firebase-database-16.0.4\AndroidManifest.xml:23:22-64
 14
 15    <application
-15-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:7:5-28:19
+15-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:5:5-23:19
 16        android:allowBackup="true"
-16-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:8:9-35
+16-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:6:9-35
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:18-86
 18        android:debuggable="true"
 19        android:icon="@mipmap/ic_launcher"
-19-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:9:9-43
+19-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:7:9-43
 20        android:label="@string/app_name"
-20-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-41
+20-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:8:9-41
 21        android:supportsRtl="true"
-21-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-35
+21-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:9:9-35
 22        android:testOnly="true"
 23        android:theme="@style/AppTheme" >
-23-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-40
+23-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:10:9-40
 24        <activity android:name="pingpong.app.machine.RegisterScreen" />
-24-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:9-72
-24-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:19-69
+24-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:9-72
+24-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:11:19-69
 25        <activity
-25-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:9-16:76
+25-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:12:9-14:76
 26            android:name="pingpong.app.machine.SocialScreen"
-26-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:13-61
+26-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:13:13-61
 27            android:parentActivityName="pingpong.app.machine.MainScreen" />
-27-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:13-73
-28        <activity
-28-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:9-19:76
-29            android:name="pingpong.app.machine.SettingsScreen"
-29-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:18:13-63
-30            android:parentActivityName="pingpong.app.machine.MainScreen" />
-30-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:19:13-73
-31        <activity android:name="pingpong.app.machine.MainScreen" />
-31-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:20:9-68
-31-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:20:19-65
-32        <activity android:name="pingpong.app.machine.LoginScreen" >
-32-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:21:9-27:20
-32-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:21:19-66
-33            <intent-filter>
-33-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:22:13-26:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:23:17-69
-34-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:23:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:25:17-77
-36-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:25:27-74
-37            </intent-filter>
-38        </activity>
-39        <activity
-39-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:24:9-31:50
-40            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-40-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:25:13-85
-41            android:excludeFromRecents="true"
-41-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:26:13-46
-42            android:exported="true"
-42-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:27:13-36
-43            android:launchMode="singleTask"
-43-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:28:13-44
-44            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-44-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:29:13-102
-45            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-45-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:30:13-72
-46
-47        <service
-47-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:33:9-39:19
-48            android:name="com.google.firebase.components.ComponentDiscoveryService"
-48-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:34:13-84
-49            android:exported="false" >
-49-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:35:13-37
-50            <meta-data
-50-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:36:13-38:85
-51                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-51-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:37:17-109
-52                android:value="com.google.firebase.components.ComponentRegistrar" />
-52-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:38:17-82
-53        </service>
-54
-55        <activity
-55-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-56            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-56-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-57            android:exported="false"
-57-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-58            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-58-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-59
-60        <provider
-60-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
-61            android:name="com.google.firebase.provider.FirebaseInitProvider"
-61-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
-62            android:authorities="pingpong.app.machine.firebaseinitprovider"
-62-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
-63            android:exported="false"
-63-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
-64            android:initOrder="100" />
-64-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
-65
-66        <meta-data
-66-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:23:9-25:69
-67            android:name="com.google.android.gms.version"
-67-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:24:13-58
-68            android:value="@integer/google_play_services_version" />
-68-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:25:13-66
-69
-70        <provider
-70-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
-71            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-71-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
-72            android:authorities="pingpong.app.machine.lifecycle-process"
-72-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
-73            android:exported="false"
-73-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
-74            android:multiprocess="true" />
-74-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
-75    </application>
-76
-77</manifest>
+27-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:14:13-73
+28        <activity android:name="pingpong.app.machine.MainScreen" />
+28-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:9-68
+28-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:15:19-65
+29        <activity android:name="pingpong.app.machine.LoginScreen" >
+29-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:9-22:20
+29-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:16:19-66
+30            <intent-filter>
+30-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:17:13-21:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:18:17-69
+31-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:18:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:20:17-77
+33-->C:\Users\ijlal\AndroidStudioProjects\SmartSolutions\pingpongapp\src\main\AndroidManifest.xml:20:27-74
+34            </intent-filter>
+35        </activity>
+36        <activity
+36-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:24:9-31:50
+37            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+37-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:25:13-85
+38            android:excludeFromRecents="true"
+38-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:26:13-46
+39            android:exported="true"
+39-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:27:13-36
+40            android:launchMode="singleTask"
+40-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:28:13-44
+41            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+41-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:29:13-102
+42            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+42-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:30:13-72
+43
+44        <service
+44-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:33:9-39:19
+45            android:name="com.google.firebase.components.ComponentDiscoveryService"
+45-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:34:13-84
+46            android:exported="false" >
+46-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:35:13-37
+47            <meta-data
+47-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:36:13-38:85
+48                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+48-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:37:17-109
+49                android:value="com.google.firebase.components.ComponentRegistrar" />
+49-->[com.google.firebase:firebase-auth:16.0.5] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\15e6e3f9ccd38f08656a54966d2cab52\jetified-firebase-auth-16.0.5\AndroidManifest.xml:38:17-82
+50        </service>
+51
+52        <activity
+52-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+53            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+53-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+54            android:exported="false"
+54-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\aff1febf1f0d3ef2ca717ac3f864a6d5\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+56
+57        <provider
+57-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+58            android:name="com.google.firebase.provider.FirebaseInitProvider"
+58-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+59            android:authorities="pingpong.app.machine.firebaseinitprovider"
+59-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+60            android:exported="false"
+60-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+61            android:initOrder="100" />
+61-->[com.google.firebase:firebase-common:16.0.3] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\3430b2fecd6225c627607716756c5a71\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+62
+63        <meta-data
+63-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:23:9-25:69
+64            android:name="com.google.android.gms.version"
+64-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:24:13-58
+65            android:value="@integer/google_play_services_version" />
+65-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\a30d897cfe81b3d3ca6e1ae59c5b9bca\jetified-play-services-basement-16.1.0\AndroidManifest.xml:25:13-66
+66
+67        <provider
+67-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+68            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+69            android:authorities="pingpong.app.machine.lifecycle-process"
+69-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+70            android:exported="false"
+70-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+71            android:multiprocess="true" />
+71-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\ijlal\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+72    </application>
+73
+74</manifest>
