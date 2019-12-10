@@ -1,6 +1,7 @@
 package pingpong.app.machine;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -59,7 +61,7 @@ public class RandomFragment extends Fragment {
 
         onOffRandom = v.findViewById(R.id.onOffRandom);
         randTimeOptions = v.findViewById(R.id.randTimeChoices);
-
+        final TextView pgsBar = v.findViewById(R.id.progressBarinsideText);
         randTimeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -79,15 +81,33 @@ public class RandomFragment extends Fragment {
                 }
             }
         });
-
+        final View fadeBackground = v.findViewById(R.id.fadeBackground);
         onOffRandom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    new CountDownTimer(4000, 1000) {
+
+                        public void onTick(long millisUntilFinished) {
+                            long countdown = millisUntilFinished/1000;
+                            String timer = Long.toString(countdown);
+                            String gamestart = getResources().getString(R.string.gamestart);
+                            pgsBar.setText(gamestart +"\n"+timer);
+                            fadeBackground.animate().alpha(.85f);
+                            pgsBar.setVisibility(View.VISIBLE);
+                            fadeBackground.setVisibility(View.VISIBLE);
+                        }
+
+                        public void onFinish() {
+                            pgsBar.setVisibility(View.GONE);
+                            fadeBackground.setVisibility(View.GONE);
+                        }
+                    }.start();
                     Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
                     t = new Thread() {
                         public void run() {
                             try{
+
                                 start.setValue("True");
                                 stop.setValue("False");
                                 while (true) {
@@ -152,8 +172,7 @@ public class RandomFragment extends Fragment {
                                 //Error check
                             }
                         }
-                    };
-                    t.start();
+                    };t.start();
                 }
                 else{
                     Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
