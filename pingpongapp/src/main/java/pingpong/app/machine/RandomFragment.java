@@ -44,7 +44,6 @@ public class RandomFragment extends Fragment {
     public String rstop;
 
     public int timeVal;
-    int counter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     volatile boolean activityStopped = false;
 
@@ -139,12 +138,6 @@ public class RandomFragment extends Fragment {
                             fadeBackground.animate().alpha(.85f);
                             pgsBar.setVisibility(View.VISIBLE);
                             fadeBackground.setVisibility(View.VISIBLE);
-                            if(counter==1) {
-                                counter=0;
-                                pgsBar.setVisibility(View.GONE);
-                                fadeBackground.setVisibility(View.GONE);
-                                this.cancel();
-                            }
                         }
 
                         public void onFinish() {
@@ -152,7 +145,6 @@ public class RandomFragment extends Fragment {
                             fadeBackground.setVisibility(View.GONE);
                             Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
                             new Thread(new Runnable() {
-                                Handler handler;
                                 public void run() {
                                     try{
 

@@ -23,7 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SetupFragment extends Fragment {
-
+    CountDownTimer mCountDownTimer;
     public RadioGroup speedTypes;
     public RadioButton speedOption1;
     public RadioButton speedOption2;
@@ -273,7 +273,7 @@ public class SetupFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    new CountDownTimer(4000, 1000) {
+                    mCountDownTimer = new CountDownTimer(4000, 1000) {
 
                         public void onTick(long millisUntilFinished) {
                             long countdown = millisUntilFinished/1000;
@@ -283,12 +283,6 @@ public class SetupFragment extends Fragment {
                             fadeBackground.animate().alpha(.85f);
                             pgsBar.setVisibility(View.VISIBLE);
                             fadeBackground.setVisibility(View.VISIBLE);
-                            if(timeval==1){
-                                pgsBar.setVisibility(View.GONE);
-                                fadeBackground.setVisibility(View.GONE);
-                                this.cancel();
-                                timeval=0;
-                            }
                         }
 
                         public void onFinish() {
@@ -302,7 +296,10 @@ public class SetupFragment extends Fragment {
                 else{
                     stop.setValue("True");
                     start.setValue("False");
-                    timeval = 1;
+                   // timeval = 1;
+                    mCountDownTimer.cancel();
+                    pgsBar.setVisibility(View.GONE);
+                    fadeBackground.setVisibility(View.GONE);
                 }
             }
         });
