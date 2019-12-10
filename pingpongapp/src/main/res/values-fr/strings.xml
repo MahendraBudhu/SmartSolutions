@@ -5,8 +5,8 @@
     <string name="action_log_in">S\'identifier</string>
     <string name="action_register">Registre</string>
     <string name="noUserToast">Merci d\'entrer un nom d\'utilisateur!</string>
-    <string name="noPassToast">Please enter a password!</string>
-    <string name="noBothToast">Veuillez entrer un mot de passe!</string>
+    <string name="noPassToast">Veuillez entrer un mot de passe!</string>
+    <string name="noBothToast">Veuillez saisir un nom d\'utilisateur et un mot de passe!</string>
     <string name="wipToast">Fonctionnalité encore à mettre en œuvre, désolé pour le désagrément!</string>
 
     <string name="statsBtn">Statistiques</string>
@@ -35,6 +35,7 @@
     <string name="shotsHit">Total de coups touchés =</string>
     <string name="shotsMissed">Total de coups manqués =</string>
     <string name="defaultAccuracy">0%</string>
+    <string name="gamesPlayed">parties jouées</string>
 
     <string name="daily">Quotidien</string>
     <string name="monthly">Mensuel</string>
@@ -88,6 +89,9 @@
     <string name="forgot">Mot de passe oublié?</string>
     <string name="forgotpass">Veuillez vérifier l\'e-mail</string>
     <string name="enterUserToReset">Veuillez saisir un e-mail pour réinitialiser le mot de passe</string>
+    <string name="fullname">Nom Complet:</string>
+    <string name="reenter">Retaper le mot de passe</string>
+    <string name="dontmatch">Les mots de passe ne correspondent pas!</string>
 
     <string name="time1">Lent</string>
     <string name="time2">Moyen</string>
@@ -104,5 +108,14 @@
     <string name="speed1">Lent</string>
     <string name="speed2">Moyen</string>
     <string name="speed3">Vite</string>
+    <string name="num3">3</string>
+    <string name="gamestart">commencer le jeu dans</string>
+    <string name="rememberMe">souviens-toi de moi</string>
+    <string name="AboutUs">à propos de nous</string>
+    <string name="ContactUs">Contactez nous</string>
+    <string name="aboutusdescription">Salut! Nous sommes des Smart Soluctions et nous prévoyons de vous apporter une technologie innovante!</string>
+    <string name="githublink">Voici notre lien github si vous souhaitez découvrir nos projets!</string>
+    <string name="contactdescription">N\'hésitez pas à nous contacter via notre Twitter ou Email!</string>
+    <string name="userProfileTB">Profil de l\'utilisateur</string>
 
 </resources>
