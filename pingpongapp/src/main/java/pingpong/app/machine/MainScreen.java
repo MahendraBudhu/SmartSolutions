@@ -64,6 +64,10 @@ public class MainScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
         switch (item.getItemId()) {
+            case R.id.userProfile:
+                intent = new Intent(this,  UserProfile.class);
+                startActivity(intent);
+                break;
             case R.id.AboutTB:
                 intent = new Intent(this, AboutUs.class);
                 startActivity(intent);
