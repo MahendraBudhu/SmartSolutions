@@ -39,7 +39,7 @@ public class RandomFragment extends Fragment {
     public RadioButton randTime1;
     public RadioButton randTime2;
     public RadioButton randTime3;
-
+    CountDownTimer mCountDownTimer;
 
     public String rstop;
 
@@ -124,13 +124,12 @@ public class RandomFragment extends Fragment {
         else if(lastRandTimerState == 3){
             randTime3.setChecked(true);
         }
-
         final View fadeBackground = v.findViewById(R.id.fadeBackground);
         onOffRandom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    new CountDownTimer(4000, 1000) {
+                    mCountDownTimer = new CountDownTimer(4000, 1000) {
 
                         public void onTick(long millisUntilFinished) {
                             long countdown = millisUntilFinished/1000;
@@ -229,9 +228,10 @@ public class RandomFragment extends Fragment {
                     Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
                     stop.setValue("True");
                     start.setValue("False");
-                    activityStopped = true;
                     rstop = "false";
-                    counter=1;
+                    mCountDownTimer.cancel();
+                    pgsBar.setVisibility(View.GONE);
+                    fadeBackground.setVisibility(View.GONE);
                 }
             }
         });
