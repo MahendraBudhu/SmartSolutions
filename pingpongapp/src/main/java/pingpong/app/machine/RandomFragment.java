@@ -2,6 +2,7 @@ package pingpong.app.machine;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class RandomFragment extends Fragment {
     public int timeVal;
     int counter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    volatile boolean activityStopped = false;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,12 +111,13 @@ public class RandomFragment extends Fragment {
                             fadeBackground.setVisibility(View.GONE);
                             Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
                             new Thread(new Runnable() {
+                                Handler handler;
                                 public void run() {
                                     try{
 
                                         start.setValue("True");
                                         stop.setValue("False");
-                                        while (true) {
+                                        while (!activityStopped) {
                                             int speedVal = (int) (Math.random() * 101);
                                             int hangle = (int) (Math.random() * 101);
                                             int vangle = (int) (Math.random() * 101);
@@ -163,8 +166,7 @@ public class RandomFragment extends Fragment {
                                             else if(spinChoice >= 67){
                                                 spin.setValue("Backspin");
                                             }
-
-                                            t.sleep(timeVal);
+                                            t.sleep(timeVal*1000);
                                             if (rstop == "false") {
                                                 start.setValue("False");
                                                 stop.setValue("True");
@@ -185,6 +187,7 @@ public class RandomFragment extends Fragment {
                     Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
                     stop.setValue("True");
                     start.setValue("False");
+                    activityStopped = true;
                     rstop = "false";
                     counter=1;
                 }
@@ -199,13 +202,11 @@ public class RandomFragment extends Fragment {
         super.onPause();
         FirebaseUser user = mAuth.getCurrentUser();
 
+        activityStopped = true;
+
         final DatabaseReference start = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Start");
         final DatabaseReference stop = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Stop");
-        if(t == null) {
-            //Do nothing
-        } else {
-            t.interrupt();
-        }
+
         stop.setValue("True");
         start.setValue("False");
     }
