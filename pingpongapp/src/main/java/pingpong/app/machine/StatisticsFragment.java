@@ -34,26 +34,26 @@ public class StatisticsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.statistics_fragment, container, false);
-        final TextView avgSpeedText = (TextView) v.findViewById(R.id.avgSpeed);
-        final TextView avgSpeedValText = (TextView) v.findViewById(R.id.avgSpeedVal);
+        final TextView avgSpeedText = v.findViewById(R.id.avgSpeed);
+        final TextView avgSpeedValText = v.findViewById(R.id.avgSpeedVal);
 
-        final TextView minSpeedText = (TextView) v.findViewById(R.id.minSpeed);
-        final TextView minSpeedValText = (TextView) v.findViewById(R.id.minSpeedVal);
+        final TextView minSpeedText = v.findViewById(R.id.minSpeed);
+        final TextView minSpeedValText = v.findViewById(R.id.minSpeedVal);
 
-        final TextView maxSpeedText = (TextView) v.findViewById(R.id.maxSpeed);
-        final TextView maxSpeedValText = (TextView) v.findViewById(R.id.maxSpeedVal);
+        final TextView maxSpeedText = v.findViewById(R.id.maxSpeed);
+        final TextView maxSpeedValText = v.findViewById(R.id.maxSpeedVal);
 
-        final TextView accuracyText = (TextView) v.findViewById(R.id.accuracy);
-        final TextView accuracyValText = (TextView) v.findViewById(R.id.accuracyVal);
+        final TextView accuracyText = v.findViewById(R.id.accuracy);
+        final TextView accuracyValText = v.findViewById(R.id.accuracyVal);
 
-        final TextView shotsTotalText = (TextView) v.findViewById(R.id.shotTotal);
-        final TextView ballShotValText = (TextView) v.findViewById(R.id.ballShotVal);
+        final TextView shotsTotalText = v.findViewById(R.id.shotTotal);
+        final TextView ballShotValText = v.findViewById(R.id.ballShotVal);
 
-        final TextView shotsHitText = (TextView) v.findViewById(R.id.shotsHit);
-        final TextView ballHitValText = (TextView) v.findViewById(R.id.ballHitVal);
+        final TextView shotsHitText = v.findViewById(R.id.shotsHit);
+        final TextView ballHitValText = v.findViewById(R.id.ballHitVal);
 
-        final TextView shotsMissedText = (TextView) v.findViewById(R.id.shotsMissed);
-        final TextView ballMissValText = (TextView) v.findViewById(R.id.ballMissVal);
+        final TextView shotsMissedText = v.findViewById(R.id.shotsMissed);
+        final TextView ballMissValText = v.findViewById(R.id.ballMissVal);
 
         List<String> mSpinner = new ArrayList<String>();
 
@@ -67,7 +67,7 @@ public class StatisticsFragment extends Fragment {
 
         mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner userHistory = (Spinner) v.findViewById(R.id.spinner);
+        Spinner userHistory = v.findViewById(R.id.spinner);
         userHistory.setAdapter(mAdapter);
 
         userHistory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -6,12 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.Toast;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,8 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.w3c.dom.Text;
-
 public class SetupFragment extends Fragment {
 
     public RadioGroup speedTypes;
@@ -35,7 +30,7 @@ public class SetupFragment extends Fragment {
     public RadioGroup spinTypes;
     FirebaseAuth mAuth;
     public Switch onOff;
-
+    int timeval=0;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,22 +131,26 @@ public class SetupFragment extends Fragment {
                             fadeBackground.animate().alpha(.85f);
                             pgsBar.setVisibility(View.VISIBLE);
                             fadeBackground.setVisibility(View.VISIBLE);
+                            if(timeval==1){
+                                pgsBar.setVisibility(View.GONE);
+                                fadeBackground.setVisibility(View.GONE);
+                                this.cancel();
+                                timeval=0;
+                            }
                         }
 
                         public void onFinish() {
                             pgsBar.setVisibility(View.GONE);
                             fadeBackground.setVisibility(View.GONE);
-                    }
-
+                            start.setValue("True");
+                            stop.setValue("False");
+                         }
                     }.start();
-                    start.setValue("True");
-                    stop.setValue("False");
                 }
                 else{
                     stop.setValue("True");
                     start.setValue("False");
-                   // pgsBar.setVisibility(View.GONE);
-                    //fadeBackground.setVisibility(View.GONE);
+                    timeval = 1;
                 }
             }
         });
