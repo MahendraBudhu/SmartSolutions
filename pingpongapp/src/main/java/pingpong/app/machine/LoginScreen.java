@@ -44,12 +44,12 @@ public class LoginScreen extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         if (pref.contains("Email") && pref.contains("Password")) {
-            if(pref.getString("signOut", "") == "true") {
-            }
-            else {
+            if (pref.getString("signOut", "") == "true") {
+            } else {
                 userField.setText(pref.getString("Email", ""));
                 passField.setText(pref.getString("Password", ""));
-                editor.putString("signOut", "true");
+                editor.putString("signOut", "false");
+                editor.commit();
                 login(null);
             }
         }
