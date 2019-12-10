@@ -4,332 +4,337 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context="pingpong.app.machine.SetupFragment">
-
-    <ScrollView
+    <View
+        android:id="@+id/fadeBackground"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layerType="hardware"
+        android:alpha="0"
+        android:visibility="visible"
+        android:background="@android:color/black"/>
 
-        <LinearLayout
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            tools:context="pingpong.app.machine.SetupScreen">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <View
+                android:id="@+id/fadeBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient_background"
-                tools:context="pingpong.app.machine.SetupScreen">
+                android:layerType="hardware"
+                android:alpha="0"
+                android:visibility="gone"
+                android:background="@android:color/black"/>
+            <TextView
+                android:id="@+id/progressBarinsideText"
+                android:layout_width="314dp"
+                android:layout_height="176dp"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:layerType="hardware"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:translationZ="90dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleHorizontalTitle" />
 
-                <TextView
-                    android:id="@+id/setupTitle"
-                    android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/setupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="298dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="310dp"
+                android:text="@string/setupText"
+                android:textSize="14pt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/speedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:text="@string/speedTitle"
+                android:textSize="10pt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setupTitle" />
+
+            <RadioGroup
+                android:id="@+id/speedChoices"
+                android:layout_width="390dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="219dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="219dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speedTitle">
+
+                <RadioButton
+                    android:id="@+id/speedType1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="64dp"
-                    android:text="@string/setupText"
-                    android:textSize="14pt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_weight="1"
+                    android:text="@string/speed1" />
 
-                <TextView
-                    android:id="@+id/speedTitle"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/speedType2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="182dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="182dp"
-                    android:text="@string/speedTitle"
-                    android:textSize="12pt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/setupTitle" />
+                    android:layout_weight="1"
+                    android:text="@string/speed2" />
 
-                <TextView
-                    android:id="@+id/speedNum"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/speedType3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/speedNumberDefault"
-                    android:textSize="12pt"
-                    app:layout_constraintStart_toEndOf="@+id/speedTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/setupTitle" />
+                    android:layout_weight="1"
+                    android:text="@string/speed3" />
 
-                <SeekBar
-                    android:id="@+id/speedControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="128dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="60"
-                    android:progress="0"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.514"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            </RadioGroup>
 
-                <View
-                    android:id="@+id/speedAngleDivider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:background="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/angleHorizontalTitle"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/speedControl" />
+            <TextView
+                android:id="@+id/angleHorizontalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:layout_marginTop="46dp"
+                android:text="@string/angleHorizontalTitle"
+                android:textSize="10pt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speedTitle" />
 
-                <TextView
-                    android:id="@+id/angleHorizontalTitle"
-                    android:layout_width="wrap_content"
+            <RadioGroup
+                android:id="@+id/horzChoices"
+                android:layout_width="390dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="219dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="219dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleHorizontalTitle">
+
+                <RadioButton
+                    android:id="@+id/horzType1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="182dp"
-                    android:layout_marginTop="156dp"
-                    android:layout_marginEnd="182dp"
-                    android:text="@string/angleHorizontalTitle"
-                    android:textSize="12pt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/setupTitle" />
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/horz1" />
 
-                <TextView
-                    android:id="@+id/angleHorizontalNum"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/horzType2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="48dp"
-                    android:text="@string/angleNumberDefault"
-                    android:textSize="12pt"
-                    app:layout_constraintStart_toEndOf="@+id/angleHorizontalTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/speedControl" />
+                    android:layout_weight="1"
+                    android:text="@string/horz2" />
 
-                <SeekBar
-                    android:id="@+id/angleHorizontalControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="252dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="12"
-                    android:progress="6"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.514"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/anglesDivider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:background="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/angleVerticalTitle"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/angleHorizontalControl" />
-
-                <TextView
-                    android:id="@+id/angleVerticalTitle"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/horzType3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="182dp"
-                    android:layout_marginTop="41dp"
-                    android:layout_marginEnd="182dp"
-                    android:text="@string/angleVerticalTitle"
-                    android:textSize="12pt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.505"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/angleHorizontalControl" />
+                    android:layout_weight="1"
+                    android:text="@string/horz3" />
 
-                <TextView
-                    android:id="@+id/angleVerticalNum"
-                    android:layout_width="wrap_content"
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/angleVerticalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:layout_marginTop="46dp"
+                android:text="@string/angleVerticalTitle"
+                android:textSize="10pt"
+                app:layout_constraintStart_toEndOf="@+id/progressBarinsideText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleHorizontalTitle" />
+
+            <RadioGroup
+                android:id="@+id/vertChoices"
+                android:layout_width="390dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="219dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="219dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleVerticalTitle">
+
+                <RadioButton
+                    android:id="@+id/vertType1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="41dp"
-                    android:text="@string/angleNumberDefault"
-                    android:textSize="12pt"
-                    app:layout_constraintStart_toEndOf="@+id/angleVerticalTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/angleHorizontalControl" />
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/vert1" />
 
-                <SeekBar
-                    android:id="@+id/angleVerticalControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="376dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="6"
-                    android:progress="3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/angleTimeDivider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:background="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/timerText"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
-
-                <SeekBar
-                    android:id="@+id/timerControl"
-                    android:layout_width="328dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:max="5"
-                    android:progress="0"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timerText" />
-
-                <TextView
-                    android:id="@+id/timerText"
-                    android:layout_width="309dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="52dp"
-                    android:text="@string/timerText"
-                    android:textSize="10pt"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
-
-                <TextView
-                    android:id="@+id/timerVal"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/vertType2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="52dp"
-                    android:layout_marginEnd="56dp"
-                    android:text="@string/defaultNumTimer"
-                    android:textSize="10pt"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.086"
-                    app:layout_constraintStart_toEndOf="@+id/timerText"
-                    app:layout_constraintTop_toBottomOf="@+id/angleVerticalControl" />
+                    android:layout_weight="1"
+                    android:text="@string/vert2" />
 
-                <View
-                    android:id="@+id/timeDivider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#000000"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
-
-                <View
-                    android:id="@+id/bottomOptionsDivider"
-                    android:layout_width="250dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="144dp"
-                    android:background="#000000"
-                    android:rotation="270"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.378"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
-
-                <TextView
-                    android:id="@+id/spinText"
-                    android:layout_width="135dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/spinText"
-                    android:textSize="10pt"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timeDivider" />
-
-                <RadioGroup
-                    android:id="@+id/spinChoices"
-                    android:layout_width="142dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="12dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/spinText">
-
-                    <RadioButton
-                        android:id="@+id/spinType1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/spin1" />
-
-                    <RadioButton
-                        android:id="@+id/spinType2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/spin2" />
-
-                    <RadioButton
-                        android:id="@+id/spinType3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/spin3" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/ballCountTitle"
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/vertType3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="636dp"
-                    android:layout_marginTop="68dp"
-                    android:text="@string/ballCountTitle"
-                    android:textSize="12pt"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ballCountDivider" />
+                    android:layout_weight="1"
+                    android:text="@string/vert3" />
 
-                <TextView
-                    android:id="@+id/ballCount"
-                    android:layout_width="wrap_content"
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/timerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:layout_marginTop="46dp"
+                android:text="@string/timerText"
+                android:textSize="10pt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleVerticalTitle" />
+
+            <RadioGroup
+                android:id="@+id/timeChoices"
+                android:layout_width="390dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="219dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="219dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timerText">
+
+                <RadioButton
+                    android:id="@+id/timeType1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="68dp"
-                    android:text="@string/defaultNum"
-                    android:textSize="12pt"
-                    app:layout_constraintStart_toEndOf="@+id/ballCountTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/ballCountDivider" />
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/time1" />
 
-                <Switch
-                    android:id="@+id/onOff"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="188dp"
-                    android:layout_marginTop="104dp"
-                    android:text="@string/onOffText"
-                    android:textSize="10pt"
-                    app:layout_constraintStart_toStartOf="@+id/ballCountDivider"
-                    app:layout_constraintTop_toBottomOf="@+id/timerControl" />
+                <RadioButton
+                    android:id="@+id/timeType2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/time2" />
 
-                <View
-                    android:id="@+id/ballCountDivider"
-                    android:layout_width="605dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="50dp"
-                    android:background="#000000"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/onOff" />
+                <RadioButton
+                    android:id="@+id/timeType3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/time3" />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ballCountTitle"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:layout_editor_absoluteX="0dp" />
+            </RadioGroup>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </ScrollView>
+            <TextView
+                android:id="@+id/spinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:layout_marginTop="46dp"
+                android:text="@string/spinText"
+                android:textSize="10pt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timerText" />
+
+            <RadioGroup
+                android:id="@+id/spinChoices"
+                android:layout_width="390dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="219dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="219dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinText">
+
+                <RadioButton
+                    android:id="@+id/spinType1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/spin1" />
+
+                <RadioButton
+                    android:id="@+id/spinType2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/spin2" />
+
+                <RadioButton
+                    android:id="@+id/spinType3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/spin3" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/ballCountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="445dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/ballCountTitle"
+                android:textSize="10pt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/onOff" />
+
+            <TextView
+                android:id="@+id/ballCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/defaultNum"
+                android:textSize="10pt"
+                app:layout_constraintStart_toEndOf="@+id/ballCountTitle"
+                app:layout_constraintTop_toBottomOf="@+id/onOff" />
+
+            <Switch
+                android:id="@+id/onOff"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="314dp"
+                android:layout_marginTop="452dp"
+                android:layout_marginEnd="314dp"
+                android:text="@string/onOffText"
+                android:textSize="10pt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </RelativeLayout>
