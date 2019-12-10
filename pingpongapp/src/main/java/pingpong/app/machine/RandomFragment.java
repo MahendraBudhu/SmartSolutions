@@ -33,7 +33,7 @@ public class RandomFragment extends Fragment {
     public RadioGroup randTimeOptions;
     public String rstop;
     public int timeVal;
-
+    int counter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,89 +96,97 @@ public class RandomFragment extends Fragment {
                             fadeBackground.animate().alpha(.85f);
                             pgsBar.setVisibility(View.VISIBLE);
                             fadeBackground.setVisibility(View.VISIBLE);
+                            if(counter==1) {
+                                counter=0;
+                                pgsBar.setVisibility(View.GONE);
+                                fadeBackground.setVisibility(View.GONE);
+                                this.cancel();
+                            }
                         }
 
                         public void onFinish() {
                             pgsBar.setVisibility(View.GONE);
                             fadeBackground.setVisibility(View.GONE);
-                        }
-                    }.start();
-                    Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
-                    t = new Thread() {
-                        public void run() {
-                            try{
+                            Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStartButtonToast), Toast.LENGTH_SHORT).show();
+                            new Thread(new Runnable() {
+                                public void run() {
+                                    try{
 
-                                start.setValue("True");
-                                stop.setValue("False");
-                                while (true) {
-                                    int speedVal = (int) (Math.random() * 101);
-                                    int hangle = (int) (Math.random() * 101);
-                                    int vangle = (int) (Math.random() * 101);
-                                    int spinChoice = (int) (Math.random() * 101);
+                                        start.setValue("True");
+                                        stop.setValue("False");
+                                        while (true) {
+                                            int speedVal = (int) (Math.random() * 101);
+                                            int hangle = (int) (Math.random() * 101);
+                                            int vangle = (int) (Math.random() * 101);
+                                            int spinChoice = (int) (Math.random() * 101);
 
-                                    //Random Speed
-                                    if(speedVal < 34){
-                                        speed.setValue("Slow");
-                                    }
-                                    else if(speedVal >= 34 && speedVal < 67){
-                                        speed.setValue("Medium");
-                                    }
-                                    else if(speedVal >= 67){
-                                        speed.setValue("Fast");
-                                    }
+                                            //Random Speed
+                                            if(speedVal < 34){
+                                                speed.setValue("Slow");
+                                            }
+                                            else if(speedVal >= 34 && speedVal < 67){
+                                                speed.setValue("Medium");
+                                            }
+                                            else if(speedVal >= 67){
+                                                speed.setValue("Fast");
+                                            }
 
-                                    //Random Horizontal Angle
-                                    if(hangle < 34){
-                                        horizontalAngle.setValue("Left");
-                                    }
-                                    else if(hangle >= 34 && hangle < 67){
-                                        horizontalAngle.setValue("Center");
-                                    }
-                                    else if(hangle >= 67){
-                                        horizontalAngle.setValue("Right");
-                                    }
+                                            //Random Horizontal Angle
+                                            if(hangle < 34){
+                                                horizontalAngle.setValue("Left");
+                                            }
+                                            else if(hangle >= 34 && hangle < 67){
+                                                horizontalAngle.setValue("Center");
+                                            }
+                                            else if(hangle >= 67){
+                                                horizontalAngle.setValue("Right");
+                                            }
 
-                                    //Random Vertical Angle
-                                    if(vangle < 34){
-                                        verticalAngle.setValue("Low");
-                                    }
-                                    else if(vangle >= 34 && vangle < 67){
-                                        verticalAngle.setValue("Medium");
-                                    }
-                                    else if(vangle >= 67){
-                                        verticalAngle.setValue("High");
-                                    }
+                                            //Random Vertical Angle
+                                            if(vangle < 34){
+                                                verticalAngle.setValue("Low");
+                                            }
+                                            else if(vangle >= 34 && vangle < 67){
+                                                verticalAngle.setValue("Medium");
+                                            }
+                                            else if(vangle >= 67){
+                                                verticalAngle.setValue("High");
+                                            }
 
-                                    //Random Spin
-                                    if(spinChoice < 34){
-                                        spin.setValue("Flat");
-                                    }
-                                    else if(spinChoice >= 34 && spinChoice < 67){
-                                        spin.setValue("Topspin");
-                                    }
-                                    else if(spinChoice >= 67){
-                                        spin.setValue("Backspin");
-                                    }
+                                            //Random Spin
+                                            if(spinChoice < 34){
+                                                spin.setValue("Flat");
+                                            }
+                                            else if(spinChoice >= 34 && spinChoice < 67){
+                                                spin.setValue("Topspin");
+                                            }
+                                            else if(spinChoice >= 67){
+                                                spin.setValue("Backspin");
+                                            }
 
-                                    TimeUnit.SECONDS.sleep(timeVal);
-                                    if (rstop == "false") {
-                                        start.setValue("False");
-                                        stop.setValue("True");
-                                        rstop = "";
-                                        break;
+                                            t.sleep(timeVal);
+                                            if (rstop == "false") {
+                                                start.setValue("False");
+                                                stop.setValue("True");
+                                                rstop = "";
+                                                break;
+                                            }
+                                        }
+                                    } catch(InterruptedException e) {
+                                        //Error check
                                     }
                                 }
-                            } catch(InterruptedException e) {
-                                //Error check
-                            }
+                            }).start();
                         }
-                    };t.start();
+                    }.start();
+
                 }
                 else{
                     Toast.makeText(getActivity().getApplicationContext(), getActivity().getApplicationContext().getString(R.string.randStopButtonToast), Toast.LENGTH_SHORT).show();
                     stop.setValue("True");
                     start.setValue("False");
                     rstop = "false";
+                    counter=1;
                 }
             }
         });
