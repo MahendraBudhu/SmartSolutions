@@ -193,7 +193,11 @@ public class RandomFragment extends Fragment {
 
         final DatabaseReference start = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Start");
         final DatabaseReference stop = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Stop");
-        t.interrupt();
+        if(t == null) {
+            //Do nothing
+        } else {
+            t.interrupt();
+        }
         stop.setValue("True");
         start.setValue("False");
     }
