@@ -62,8 +62,12 @@ public class MainScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
         switch (item.getItemId()) {
-            case R.id.socialTB:
-                intent = new Intent(this, SocialScreen.class);
+            case R.id.AboutTB:
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
+                break;
+            case R.id.contactTB:
+                intent = new Intent(this, ContactUs.class);
                 startActivity(intent);
                 break;
             case R.id.signOut:

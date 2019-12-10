@@ -110,6 +110,11 @@
     <string name="num3">3</string>
     <string name="gamestart">Starting Game In</string>
     <string name="rememberMe">Remember me</string>
+    <string name="AboutUs">About Us</string>
+    <string name="ContactUs">Contact Us</string>
+    <string name="aboutusdescription">Hi! We are Smart Solutions and we plan on bringing you innovative technology to you!</string>
+    <string name="githublink">Here is our github link if you would like to explore our projects!</string>
+    <string name="contactdescription">Feel free to contact us at our Twitter or Email!</string>
 
 
 </resources>

@@ -16,7 +16,10 @@
         <activity android:name="pingpong.app.machine.RegisterScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
-            android:name="pingpong.app.machine.SocialScreen"
+            android:name="pingpong.app.machine.AboutUs"
+            android:parentActivityName="pingpong.app.machine.MainScreen" />
+        <activity
+            android:name="pingpong.app.machine.ContactUs"
             android:parentActivityName="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.MainScreen" />
         <activity android:name="pingpong.app.machine.SplashScreen"
