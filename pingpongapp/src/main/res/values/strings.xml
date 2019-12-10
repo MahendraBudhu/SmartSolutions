@@ -107,5 +107,9 @@
     <string name="speed1">Slow</string>
     <string name="speed2">Medium</string>
     <string name="speed3">Fast</string>
+    <string name="num3">3</string>
+    <string name="gamestart">Starting Game In</string>
+
+
 
 </resources>
