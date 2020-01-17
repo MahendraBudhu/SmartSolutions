@@ -1,8 +1,10 @@
 package pingpong.app.machine;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginScreen extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
-    private int STORAGE_PERMISSION_CODE = 1;
+    private static final int PICK_FROM_GALLERY = 1;
     ProgressBar pgsBar;
 
     @Override
@@ -35,6 +37,23 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         mAuth = FirebaseAuth.getInstance();
+        TextView userField = findViewById(R.id.username);
+        TextView passField = findViewById(R.id.password);
+        String username = userField.getText().toString();
+        String password = passField.getText().toString();
+        SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        if (pref.contains("Email") && pref.contains("Password")) {
+            if (pref.getString("signOut", "") == "true") {
+            } else {
+                userField.setText(pref.getString("Email", ""));
+                passField.setText(pref.getString("Password", ""));
+                editor.putString("signOut", "false");
+                editor.commit();
+                login(null);
+            }
+        }
+
     }
 
     //Validating Login Infos
@@ -94,7 +113,7 @@ public class LoginScreen extends AppCompatActivity {
 
     private void requestStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Manifest.permission.CAMERA)) {
 
             new AlertDialog.Builder(this)
                     .setTitle("Permission needed")
@@ -102,7 +121,7 @@ public class LoginScreen extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(LoginScreen.this,
-                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PICK_FROM_GALLERY);
                         }
                     })
                     .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -115,7 +134,7 @@ public class LoginScreen extends AppCompatActivity {
 
         } else {
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PICK_FROM_GALLERY);
         }
     }
 
@@ -143,6 +162,15 @@ public class LoginScreen extends AppCompatActivity {
         }
     }
 
-
-
+    public void save(View view) {
+        TextView userField = findViewById(R.id.username);
+        String username = userField.getText().toString();
+        TextView passField = findViewById(R.id.password);
+        String password = passField.getText().toString();
+        SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("Email", username);
+        editor.putString("Password", password);
+        editor.commit();
+    }
 }

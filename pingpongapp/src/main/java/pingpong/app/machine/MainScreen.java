@@ -1,8 +1,10 @@
 //Smart Solutions
 package pingpong.app.machine;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -62,11 +64,23 @@ public class MainScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
         switch (item.getItemId()) {
-            case R.id.socialTB:
-                intent = new Intent(this, SocialScreen.class);
+            case R.id.userProfile:
+                intent = new Intent(this,  UserProfile.class);
+                startActivity(intent);
+                break;
+            case R.id.AboutTB:
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
+                break;
+            case R.id.contactTB:
+                intent = new Intent(this, ContactUs.class);
                 startActivity(intent);
                 break;
             case R.id.signOut:
+                SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("signOut", "true");
+                editor.commit();
                 FirebaseAuth.getInstance().signOut();
                 intent = new Intent(this, LoginScreen.class);
                 startActivity(intent);

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/settingsTB"
-        android:title="@string/SettingsTB" />
-
+        android:id="@+id/AboutTB"
+        android:title="@string/AboutUs" />
     <item
-        android:id="@+id/socialTB"
-        android:title="@string/socialTextTB" />
-
+        android:id="@+id/contactTB"
+        android:title="@string/ContactUs" />
     <item
         android:id="@+id/signOut"
         android:title="@string/signOut" />
+
+    <item
+        android:id="@+id/userProfile"
+        android:icon="@drawable/ic_user_profile"
+        android:title="@string/userProfileTB"
+        app:showAsAction="always"
+        />
 </menu>

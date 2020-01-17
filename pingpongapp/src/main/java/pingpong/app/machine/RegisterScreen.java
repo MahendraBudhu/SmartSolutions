@@ -2,6 +2,7 @@
 package pingpong.app.machine;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,7 +41,6 @@ public class RegisterScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_screen);
         mAuth = FirebaseAuth.getInstance();
-
     }
 
     public void signUp(final View view) {

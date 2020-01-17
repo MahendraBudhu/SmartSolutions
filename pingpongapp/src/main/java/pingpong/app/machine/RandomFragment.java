@@ -1,7 +1,10 @@
 package pingpong.app.machine;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,13 +31,21 @@ import java.util.concurrent.TimeUnit;
 
 public class RandomFragment extends Fragment {
     FirebaseAuth mAuth;
+
     public Thread t;
     public Switch onOffRandom;
+
     public RadioGroup randTimeOptions;
+    public RadioButton randTime1;
+    public RadioButton randTime2;
+    public RadioButton randTime3;
+    CountDownTimer mCountDownTimer;
+
     public String rstop;
+
     public int timeVal;
-    int counter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    volatile boolean activityStopped = false;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +58,10 @@ public class RandomFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.random_fragment, container, false);
+
+        SharedPreferences pref = this.getActivity().getSharedPreferences("MyPref", 0);
+
+        final SharedPreferences.Editor editor = pref.edit();
 
         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -61,7 +76,16 @@ public class RandomFragment extends Fragment {
 
         onOffRandom = v.findViewById(R.id.onOffRandom);
         randTimeOptions = v.findViewById(R.id.randTimeChoices);
+
+        randTime1 = v.findViewById(R.id.randTimeType1);
+        randTime2 = v.findViewById(R.id.randTimeType2);
+        randTime3 = v.findViewById(R.id.randTimeType3);
+
+
         final TextView pgsBar = v.findViewById(R.id.progressBarinsideText);
+
+        timeVal = 6;
+
         randTimeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //Spin type data for database
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -70,23 +94,41 @@ public class RandomFragment extends Fragment {
                 if(randTimeRequest.equalsIgnoreCase("Slow")) {
                     timeVal = 6;
                     timer.setValue("Slow");
+                    editor.putInt("randTimerState", 1);
+                    editor.commit();
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Medium")) {
                     timeVal = 4;
                     timer.setValue("Medium");
+                    editor.putInt("randTimerState", 2);
+                    editor.commit();
                 }
                 else if(randTimeRequest.equalsIgnoreCase("Fast")) {
                     timeVal = 2;
                     timer.setValue("Fast");
+                    editor.putInt("randTimerState", 3);
+                    editor.commit();
                 }
             }
         });
+
+        int lastRandTimerState = pref.getInt("randTimerState", 0);
+
+        if(lastRandTimerState == 1){
+            randTime1.setChecked(true);
+        }
+        else if(lastRandTimerState == 2){
+            randTime2.setChecked(true);
+        }
+        else if(lastRandTimerState == 3){
+            randTime3.setChecked(true);
+        }
         final View fadeBackground = v.findViewById(R.id.fadeBackground);
         onOffRandom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    new CountDownTimer(4000, 1000) {
+                    mCountDownTimer = new CountDownTimer(4000, 1000) {
 
                         public void onTick(long millisUntilFinished) {
                             long countdown = millisUntilFinished/1000;
@@ -96,12 +138,6 @@ public class RandomFragment extends Fragment {
                             fadeBackground.animate().alpha(.85f);
                             pgsBar.setVisibility(View.VISIBLE);
                             fadeBackground.setVisibility(View.VISIBLE);
-                            if(counter==1) {
-                                counter=0;
-                                pgsBar.setVisibility(View.GONE);
-                                fadeBackground.setVisibility(View.GONE);
-                                this.cancel();
-                            }
                         }
 
                         public void onFinish() {
@@ -114,7 +150,7 @@ public class RandomFragment extends Fragment {
 
                                         start.setValue("True");
                                         stop.setValue("False");
-                                        while (true) {
+                                        while (!activityStopped) {
                                             int speedVal = (int) (Math.random() * 101);
                                             int hangle = (int) (Math.random() * 101);
                                             int vangle = (int) (Math.random() * 101);
@@ -163,8 +199,7 @@ public class RandomFragment extends Fragment {
                                             else if(spinChoice >= 67){
                                                 spin.setValue("Backspin");
                                             }
-
-                                            t.sleep(timeVal);
+                                            t.sleep(timeVal*1000);
                                             if (rstop == "false") {
                                                 start.setValue("False");
                                                 stop.setValue("True");
@@ -186,7 +221,9 @@ public class RandomFragment extends Fragment {
                     stop.setValue("True");
                     start.setValue("False");
                     rstop = "false";
-                    counter=1;
+                    mCountDownTimer.cancel();
+                    pgsBar.setVisibility(View.GONE);
+                    fadeBackground.setVisibility(View.GONE);
                 }
             }
         });
@@ -199,13 +236,11 @@ public class RandomFragment extends Fragment {
         super.onPause();
         FirebaseUser user = mAuth.getCurrentUser();
 
+        activityStopped = true;
+
         final DatabaseReference start = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Start");
         final DatabaseReference stop = database.getReference("Users/" + user.getUid() +"/Ball Configuration /Stop");
-        if(t == null) {
-            //Do nothing
-        } else {
-            t.interrupt();
-        }
+
         stop.setValue("True");
         start.setValue("False");
     }
