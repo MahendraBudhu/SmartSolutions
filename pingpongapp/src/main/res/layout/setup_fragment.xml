@@ -71,7 +71,7 @@
             <RadioGroup
                 android:id="@+id/speedChoices"
                 android:layout_width="390dp"
-                android:layout_height="25dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
@@ -102,109 +102,65 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/angleHorizontalTitle"
+                android:id="@+id/angleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="46dp"
+                android:layout_marginTop="44dp"
                 android:layout_marginEnd="208dp"
-                android:text="@string/angleHorizontalTitle"
+                android:text="@string/angleTitle"
                 android:textSize="10pt"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/speedTitle" />
 
-            <RadioGroup
-                android:id="@+id/horzChoices"
-                android:layout_width="390dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
+            <Button
+                android:id="@+id/angleUp"
+                android:layout_width="88dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="152dp"
+                android:text="@string/BtnUp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/angleHorizontalTitle">
+                app:layout_constraintTop_toBottomOf="@+id/angleTitle" />
 
-                <RadioButton
-                    android:id="@+id/horzType1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:text="@string/horz1" />
-
-                <RadioButton
-                    android:id="@+id/horzType2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/horz2" />
-
-                <RadioButton
-                    android:id="@+id/horzType3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/horz3" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/angleVerticalTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="46dp"
-                android:layout_marginEnd="236dp"
-                android:text="@string/angleVerticalTitle"
-                android:textSize="10pt"
-                app:layout_constraintEnd_toEndOf="parent"
+            <Button
+                android:id="@+id/angleRight"
+                android:layout_width="88dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="240dp"
+                android:text="@string/BtnRight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/angleHorizontalTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/angleUp" />
 
-            <RadioGroup
-                android:id="@+id/vertChoices"
-                android:layout_width="390dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
+            <Button
+                android:id="@+id/angleLeft"
+                android:layout_width="88dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="64dp"
+                android:text="@string/BtnLeft"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/angleVerticalTitle">
+                app:layout_constraintTop_toBottomOf="@+id/angleUp" />
 
-                <RadioButton
-                    android:id="@+id/vertType1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:text="@string/vert1" />
-
-                <RadioButton
-                    android:id="@+id/vertType2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/vert2" />
-
-                <RadioButton
-                    android:id="@+id/vertType3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/vert3" />
-
-            </RadioGroup>
+            <Button
+                android:id="@+id/angleDown"
+                android:layout_width="88dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="152dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/BtnDown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/angleUp" />
 
             <TextView
                 android:id="@+id/timerText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="46dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/timerText"
                 android:textSize="10pt"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/angleVerticalTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/angleDown" />
 
             <RadioGroup
                 android:id="@+id/timeChoices"

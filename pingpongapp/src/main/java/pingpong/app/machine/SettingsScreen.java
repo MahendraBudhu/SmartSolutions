@@ -1,7 +1,9 @@
 package pingpong.app.machine;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.CompoundButton;
@@ -19,12 +21,13 @@ public class SettingsScreen extends AppCompatActivity {
     SharedPreferences.Editor editor;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_screen);
 
         pref  = getApplicationContext().getSharedPreferences("MyPrefs", 0);
         editor = pref.edit();
+        nightModeSwitch = findViewById(R.id.darkModeSwitch);
 
         nightModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -41,15 +44,18 @@ public class SettingsScreen extends AppCompatActivity {
                 }
             }
         });
-
         }
     public void darkModeCheck(){
         Boolean check = pref.getBoolean("darkMode", false);
         if(check){
-            setTheme(R.style.ActivityTheme_Primary_Base_Dark);
+            setTheme(R.style.DarkTheme);
+            Intent intent = new Intent(SettingsScreen.this, SettingsScreen.class);
+            startActivity(intent);
         }
         else{
-            setTheme(R.style.ActivityTheme_Primary_Base_Light);
+            setTheme(R.style.LightTheme);
+            Intent intent = new Intent(SettingsScreen.this, SettingsScreen.class);
+            startActivity(intent);
         }
     }
 }

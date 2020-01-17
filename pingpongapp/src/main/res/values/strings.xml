@@ -122,5 +122,10 @@
     <string name="changepass">Change Password</string>
 
     <string name="SettingsTB">Settings</string>
+    <string name="angleTitle">Angle</string>
+    <string name="BtnUp">Up</string>
+    <string name="BtnRight">Right</string>
+    <string name="BtnLeft">Left</string>
+    <string name="BtnDown">Down</string>
 
 </resources>
