@@ -2,23 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setupBG"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context="pingpong.app.machine.SetupFragment">
+
     <View
         android:id="@+id/fadeBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layerType="hardware"
         android:alpha="0"
-        android:visibility="visible"
-        android:background="@android:color/black"/>
+        android:background="@android:color/black"
+        android:layerType="hardware"
+        android:visibility="visible" />
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout

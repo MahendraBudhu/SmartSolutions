@@ -1,6 +1,7 @@
 package pingpong.app.machine;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -26,6 +28,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SetupFragment extends Fragment  {
     //Class Variables
+    public RelativeLayout setupBG;
+
     public RadioGroup speedTypes;
 
     public Button angleUpBtn;
@@ -75,6 +79,8 @@ public class SetupFragment extends Fragment  {
         timeTypes = v.findViewById(R.id.timeChoices);
         spinTypes = v.findViewById(R.id.spinChoices);
 
+        setupBG = v.findViewById(R.id.setupBG); //Using this for debugging purposes, will give visual feedback for what angle button is pressed. Red = Left, Blue = Up, Green = Right, Yellow = Down.
+
         //Setting up default DB Values
         start.setValue("False");
         stop.setValue("True");
@@ -103,9 +109,11 @@ public class SetupFragment extends Fragment  {
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     angleUp.setValue("1");
+                    setupBG.setBackgroundColor(Color.BLUE); //Debugging purposes, will add animation later.
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     angleUp.setValue("0");
+                    setupBG.setBackgroundColor(Color.WHITE); //Debugging purposes, will add animation later.
                 }
                 return true;
             }
@@ -116,9 +124,11 @@ public class SetupFragment extends Fragment  {
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     angleRight.setValue("1");
+                    setupBG.setBackgroundColor(Color.GREEN); //Debugging purposes, will add animation later.
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     angleRight.setValue("0");
+                    setupBG.setBackgroundColor(Color.WHITE); //Debugging purposes, will add animation later.
                 }
                 return true;
             }
@@ -129,9 +139,11 @@ public class SetupFragment extends Fragment  {
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     angleLeft.setValue("1");
+                    setupBG.setBackgroundColor(Color.RED); //Debugging purposes, will add animation later.
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     angleLeft.setValue("0");
+                    setupBG.setBackgroundColor(Color.WHITE); //Debugging purposes, will add animation later.
                 }
                 return true;
             }
@@ -142,9 +154,11 @@ public class SetupFragment extends Fragment  {
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     angleDown.setValue("1");
+                    setupBG.setBackgroundColor(Color.YELLOW); //Debugging purposes, will add animation later.
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP){
                     angleDown.setValue("0");
+                    setupBG.setBackgroundColor(Color.WHITE); //Debugging purposes, will add animation later.
                 }
                 return true;
             }
