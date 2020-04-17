@@ -10,10 +10,10 @@
     <string name="wipToast">Feature yet to be implemented, sorry for the inconvenience!</string>
 
     <string name="statsBtn">Statistics</string>
-    <string name="setupBtn">Ball Configuration</string>
+    <string name="setupBtn">Play Settings</string>
     <string name="randomBtn">Random Practice</string>
 
-    <string name="setupText">Ball Configuration</string>
+    <string name="setupText">Play Settings</string>
     <string name="speedTitle">Speed</string>
     <string name="angleHorizontalTitle">Angle (Horizontal)</string>
     <string name="angleVerticalTitle">Angle (Vertical)</string>

@@ -4,7 +4,7 @@
     <item
         android:id="@+id/nav_manualConfig"
         android:icon="@drawable/ic_manual_config_24dp"
-        android:title="Manual Config" />
+        android:title="Play Settings" />
 
     <item
         android:id="@+id/nav_randomConfig"
